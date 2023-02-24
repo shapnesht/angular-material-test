@@ -1,23 +1,24 @@
+
 <mat-toolbar>
-  <mat-toolbar-row class="justify-content-between">
+  <mat-toolbar-row class="justify-start">
     <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="example-spacer"></span>
-    <div class="row mr-2 ml-auto">
+    <!-- <span class="example-spacer"></span> -->
+    <div class=" mr-2 ml-auto">
       <ul>
         <li>
           <button
             mat-button
             [matMenuTriggerFor]="menu"
-            class="user mt-2 d-flex align-items-center"
+            class="user mt-2 flex items-center"
           >
             <img
               src="../../assets/graduated.png"
               alt=""
-              class="user-image mr-1 p-2 resize"
+              class="user-image p-2"
             />
-            <mat-icon cass="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+            <mat-icon class="user-image-icon">keyboard_arrow_down</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item>
