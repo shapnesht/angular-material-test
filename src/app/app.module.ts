@@ -8,13 +8,15 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatDividerModule} from '@angular/material/divider';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import {MatDividerModule} from '@angular/material/divider';
     HeaderComponent,
     SidenavComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    LandingpageComponent,
+    StudentprofilepageComponent,
+    ResetpasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,6 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDividerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
