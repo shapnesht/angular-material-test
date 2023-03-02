@@ -17,6 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     LandingpageComponent,
     StudentprofilepageComponent,
     ResetpasswordComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path:'resetpassword' ,component:ResetpasswordComponent
+  },
+  {
+    path:'forgotpassword' ,component:ForgotpasswordComponent
   },
 
 ];
