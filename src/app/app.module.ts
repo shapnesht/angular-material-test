@@ -14,6 +14,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
@@ -39,6 +40,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     MatIconModule,
     MatListModule,
     MatDividerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
