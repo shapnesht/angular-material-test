@@ -19,6 +19,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +34,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     StudentprofilepageComponent,
     ResetpasswordComponent,
     ForgotpasswordComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
     MatIconModule,
     MatListModule,
     MatDividerModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

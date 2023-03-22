@@ -6,6 +6,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,9 @@ const routes: Routes = [
   },
   {
     path:'forgotpassword' ,component:ForgotpasswordComponent
+  },
+  {
+    path:'temp' ,component:AdminDashboardComponent
   },
 
 ];
