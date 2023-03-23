@@ -7,6 +7,7 @@ import { StudentprofilepageComponent } from './studentprofilepage/studentprofile
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
+import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'temp' ,component:AdminDashboardComponent
   },
+  {
+    path:'temp1' ,component:StudentDashboardComponent
+  },
+  
 
 ];
 

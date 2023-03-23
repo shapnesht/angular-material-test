@@ -21,6 +21,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import {MatButtonModule} from '@angular/material/button';
+import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {MatButtonModule} from '@angular/material/button';
     ResetpasswordComponent,
     ForgotpasswordComponent,
     AdminDashboardComponent,
+    StudentDashboardComponent,
   ],
   imports: [
     BrowserModule,
