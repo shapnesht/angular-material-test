@@ -22,6 +22,13 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import {MatButtonModule} from '@angular/material/button';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
+import { AddClassComponent } from './components/admin/add-class/add-class.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import { ViewAllStudentsComponent } from './components/teacher/view-all-students/view-all-students.component';
+
 
 
 @NgModule({
@@ -37,6 +44,8 @@ import { StudentDashboardComponent } from './components/student/student-dashboar
     ForgotpasswordComponent,
     AdminDashboardComponent,
     StudentDashboardComponent,
+    AddClassComponent,
+    ViewAllStudentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +59,10 @@ import { StudentDashboardComponent } from './components/student/student-dashboar
     MatDividerModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

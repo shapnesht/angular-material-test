@@ -1,0 +1,63 @@
+<mat-card class="m-4">
+    <h1 class="font-semibold p-3 text-xl">Add New Class</h1>
+    <!-- {{data|json}} -->
+    <mat-card-content>
+        <form class="w-full max-w-lg mx-auto">
+            <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-first-name">
+                        Subject Name
+                    </label>
+                    <input
+                        class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="grid-first-name" type="text" placeholder="Software Engineering">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-first-name">
+                        Select Current Year
+                    </label>
+                    <input
+                        class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                        id="grid-first-name" type="text" placeholder="YYYY">
+                </div>
+                <div class="w-full md:w-1/2 px-3 mt-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-last-name">
+                        Select Semester
+                    </label>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Semester</mat-label>
+                        <mat-select [(ngModel)]="data.semester" name="food">
+                            <mat-option *ngFor="let sem of semesters" [value]="sem">
+                                {{sem}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="w-full md:w-1/2 px-3 mt-3">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                        for="grid-last-name">
+                        Select Branch
+                    </label>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Branch</mat-label>
+                        <mat-select [(ngModel)]="data.brach" name="food">
+                            <mat-option *ngFor="let branch of branches" [value]="branch">
+                                {{branch}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <button mat-raised-button class="w-1/2">Load Students</button>
+                <button class="ml-1 w-1/2" mat-raised-button>View Students</button>
+            </div>
+            <div class="flex justify-center mt-3">
+                <button class="w-full" mat-raised-button color="warn">Create Class</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -8,6 +8,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
+import { AddClassComponent } from './components/admin/add-class/add-class.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,9 @@ const routes: Routes = [
   },
   {
     path:'temp1' ,component:StudentDashboardComponent
+  },
+  {
+    path:'temp2' ,component:AddClassComponent
   },
   
 
