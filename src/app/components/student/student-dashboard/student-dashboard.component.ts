@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-dashboard.component.scss'],
 })
 export class StudentDashboardComponent {
-  name: string = 'ashi';
+  name: string = 'Shapnesh';
 
   classes = {
     batches: [
@@ -26,5 +26,10 @@ export class StudentDashboardComponent {
         noOfStudents: 2,
       },
     ],
+  };
+  stats = {
+    total :100,
+    present: 50,
+    percentage: 50,
   };
 }

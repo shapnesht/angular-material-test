@@ -1,6 +1,16 @@
-<div class="p-5 bg-gray-200 flex-1">
+<div class="m-5">
+<div>
   <h1 class="text-3xl">Hello {{ name }} !!</h1>
   <hr class="my-3 bg-gray-700 h-1" />
+  <h1 class="text-2xl font-bold pb-3">MY STATISTICS</h1>
+  <div class="flex-container pb-6">
+  <div><h1 class="font-bold underline">TOTAL CLASSES</h1><p>{{stats.total}}</p></div>
+  <div><h1 class="font-bold underline">TOTAL PRESENT</h1><p>{{stats.present}}</p></div>
+  <div><h1 class="font-bold underline">PERCENTAGE</h1><p>{{stats.percentage}}</p></div>
+  </div>
+</div>
+<hr class="my-3 bg-gray-700 h-1" />
+  
   <h1 class="text-2xl font-bold">MY CLASSES</h1>
   <div class="border-2 w-full mt-2">
     <div *ngFor="let class of classes.batches; odd as isOdd; even as isEven">
@@ -12,13 +22,10 @@
           <h2 class="font-bold">{{ class.subject }}</h2>
         </div>
         <div>
-          <button mat-raised-button class="mr-2">Take attendence</button>
           <button mat-raised-button>View attendence</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="flex justify-center">
-    <button mat-raised-button class="mx-auto mt-5">Add class</button>
   </div>
-</div>
+
