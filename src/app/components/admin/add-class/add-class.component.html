@@ -1,62 +1,78 @@
-<mat-card class="m-4">
+<mat-card class="m-3 h-full">
     <h1 class="font-semibold p-3 text-xl">Add New Class</h1>
-    <!-- {{data|json}} -->
     <mat-card-content>
         <form class="w-full max-w-lg mx-auto">
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="flex flex-wrap -mx-3">
+                <div class="w-full md:w-full px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                         for="grid-first-name">
                         Subject Name
                     </label>
                     <input
                         class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="grid-first-name" type="text" placeholder="Software Engineering">
+                        name="subject" [(ngModel)]="data.subject" type="text" placeholder="Software Engineering">
                 </div>
-                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-first-name">
-                        Select Current Year
-                    </label>
-                    <input
-                        class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                        id="grid-first-name" type="text" placeholder="YYYY">
-                </div>
-                <div class="w-full md:w-1/2 px-3 mt-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-last-name">
-                        Select Semester
-                    </label>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Semester</mat-label>
-                        <mat-select [(ngModel)]="data.semester" name="food">
-                            <mat-option *ngFor="let sem of semesters" [value]="sem">
-                                {{sem}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-                <div class="w-full md:w-1/2 px-3 mt-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-last-name">
-                        Select Branch
-                    </label>
-                    <mat-form-field appearance="fill">
-                        <mat-label>Branch</mat-label>
-                        <mat-select [(ngModel)]="data.brach" name="food">
-                            <mat-option *ngFor="let branch of branches" [value]="branch">
-                                {{branch}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
+                <div class="flex justify-between px-3 w-full">
+                    <div class="w-full md:w-1/2 mt-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="grid-last-name">
+                            Select Semester
+                        </label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Semester</mat-label>
+                            <mat-select [(ngModel)]="data.semester" name="semesters">
+                                <mat-option *ngFor="let sem of semesters" [value]="sem">
+                                    {{sem}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="w-full md:w-1/2 mt-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                            for="grid-last-name">
+                            Select Branch
+                        </label>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Branch</mat-label>
+                            <mat-select name="branch" [(ngModel)]="data.branch" name="food">
+                                <mat-option *ngFor="let branch of branches" [value]="branch">
+                                    {{branch}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
                 </div>
             </div>
-            <div class="flex justify-center">
-                <button mat-raised-button class="w-1/2">Load Students</button>
-                <button class="ml-1 w-1/2" mat-raised-button>View Students</button>
+            <div class="flex justify-center mb-3">
+                <button mat-raised-button class="w-2/6">Load Students</button>
+                <mat-slide-toggle class="ml-5" name="viewStudents" [(ngModel)]="viewStudents">
+                    <h1 class="text-lg">View Students</h1>
+                </mat-slide-toggle>
             </div>
-            <div class="flex justify-center mt-3">
-                <button class="w-full" mat-raised-button color="warn">Create Class</button>
+            <div class="w-full mb-3">
+                <button mat-raised-button class="w-full" color="warn">Create Class</button>
+            </div>
+            <div *ngIf="viewStudents && students.students.length > 0">
+                <div class="border-2 w-full mt-2">
+                    <h1 class="font-semibold p-3 text-xl">Students of {{data.subject}}</h1>
+                    <mat-card-content>
+                        <div class="flex justify-around flex-wrap">
+                            <div class="w-full md:w-1/2"
+                                *ngFor="let student of students.students; odd as isOdd; even as isEven; index as i">
+                                <div [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
+                                    class="flex justify-between p-1">
+                                    <div>
+                                        <h2 class="font-bold ml-2 mt-2">{{ student.name }}</h2>
+                                    </div>
+                                    <div>
+                                        <p><mat-checkbox name="isActive" [(ngModel)]="student.isActive"></mat-checkbox>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </div>
             </div>
         </form>
     </mat-card-content>

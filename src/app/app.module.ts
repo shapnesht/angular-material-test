@@ -27,8 +27,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
-import { ViewAllStudentsComponent } from './components/teacher/view-all-students/view-all-students.component';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
 
 
 @NgModule({
@@ -45,7 +46,7 @@ import { ViewAllStudentsComponent } from './components/teacher/view-all-students
     AdminDashboardComponent,
     StudentDashboardComponent,
     AddClassComponent,
-    ViewAllStudentsComponent,
+    StudentAttendanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +63,9 @@ import { ViewAllStudentsComponent } from './components/teacher/view-all-students
     MatFormFieldModule,
     MatSnackBarModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

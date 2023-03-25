@@ -9,6 +9,7 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { AddClassComponent } from './components/admin/add-class/add-class.component';
+import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,9 @@ const routes: Routes = [
   },
   {
     path:'temp2' ,component:AddClassComponent
+  },
+  {
+    path:'temp3' ,component:StudentAttendanceComponent
   },
   
 
