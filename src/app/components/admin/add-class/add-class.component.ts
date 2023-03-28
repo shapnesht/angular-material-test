@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-class',
@@ -9,42 +7,52 @@ import Swal from 'sweetalert2';
 })
 export class AddClassComponent {
   data = {
-    name: '',
+    subject: '',
     semester: '',
-    brach:''
+    branch: '',
+    students: [],
+    year: new Date().getFullYear()
   };
 
-  semesters = [1, 2, 3, 4, 5, 6, 7, 8]
-  branches = ["IT", "EC", "EE", "CE", "ME"]
+  viewStudents = false;
 
-  // private constructor(private snack:MatSnackBar) {}
+  students = {
+    students: [
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        name: 'Sanjay Poori',
+        isActive: true,
+      },
+      {
+        _id: '63e1eb623a1c19bbb3000081',
+        name: 'Sattu Sahu',
+        isActive: true,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        name: 'Sanjay Poori',
+        isActive: true,
+      },
+      {
+        _id: '63e1eb623a1c19bbb3000081',
+        name: 'Sattu Sahu',
+        isActive: true,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        name: 'Sanjay Poori',
+        isActive: true,
+      },
+      {
+        _id: '63e1eb623a1c19bbb3000081',
+        name: 'Sattu Sahu',
+        isActive: true,
+      },
+    ],
+  };
+
+  semesters = [1, 2, 3, 4, 5, 6, 7, 8];
+  branches = ['IT', 'EC', 'EE', 'CE', 'ME'];
 
   ngOnInit(): void {}
-
-  // formSubmit() {
-  //   if (this.data.title == null || this.data.title.trim() == '') {
-  //     this.snack.open('Category Name Should not be empty!!', '', {
-  //       duration: 2000,
-  //     });
-  //     return;
-  //   }
-  //   if (this.data.description == null || this.data.description.trim() == '') {
-  //     this.snack.open('Description Should not be empty!!', '', {
-  //       duration: 2000,
-  //     });
-  //     return;
-  //   }
-  //   this.category.addCategory(this.data).subscribe(
-  //     (success: any) => {
-  //       Swal.fire(
-  //         'Success!!',
-  //         'Category was successfully added with id : ' + success.categoryId,
-  //         'success'
-  //       );
-  //     },
-  //     (error: any) => {
-  //       Swal.fire('Error!!', 'Server Error, Please Try Again Later', error);
-  //     }
-  //   );
-  // }
 }

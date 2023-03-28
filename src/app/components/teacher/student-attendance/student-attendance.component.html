@@ -1,0 +1,55 @@
+<mat-card class="mx-3 h-full gray-background">
+    <div class="border-2 w-full mt-2">
+        <div class="flex w-full justify-between">
+            <h1 class="font-semibold p-3 text-xl">Attendance Of TOC</h1>
+            <div class="p-3">
+                <button type="button" class="mr-2" color="primary" mat-raised-button routerLink="/">Home</button>
+                <button type="button" color="warn" mat-raised-button (click)="printDiv('printableArea')">Print
+                    Attendance</button>
+            </div>
+        </div>
+        <mat-card-content id="printableArea">
+            <div class="w-full flex">
+                <div class="flex w-full md:w-1/2 justify-evenly">
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Name</h2>
+                    </div>
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Attendance</h2>
+                    </div>
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Percentage</h2>
+                    </div>
+                </div>
+                <div class="md:flex hidden justify-evenly w-1/2">
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Name</h2>
+                    </div>
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Attendance</h2>
+                    </div>
+                    <div class="w-1/3">
+                        <h2 class="font-bold ml-2 mt-2">Percentage</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-around flex-wrap">
+                <div class="w-full md:w-1/2"
+                    *ngFor="let student of students.students; odd as isOdd; even as isEven; index as i">
+                    <div [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }" class="flex justify-evenly">
+                        <div class="w-1/3">
+                            <h2 class="font-bold ml-2 mt-2">{{ student.name }}</h2>
+                        </div>
+                        <div class="w-1/3">
+                            <h2 class="font-bold ml-2 mt-2">{{ student.totalPresent }} / {{student.totalClasses}}</h2>
+                        </div>
+                        <div class="w-1/3">
+                            <h2 class="font-bold ml-2 mt-2">{{ (student.totalPresent / student.totalClasses *
+                                100).toFixed(1)}}%</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </div>
+</mat-card>
