@@ -30,7 +30,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
-
+import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';  
 
 @NgModule({
   declarations: [
@@ -47,6 +51,7 @@ import { StudentAttendanceComponent } from './components/teacher/student-attenda
     StudentDashboardComponent,
     AddClassComponent,
     StudentAttendanceComponent,
+    ShowCalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,9 +70,13 @@ import { StudentAttendanceComponent } from './components/teacher/student-attenda
     FormsModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    NgxMatTimepickerModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

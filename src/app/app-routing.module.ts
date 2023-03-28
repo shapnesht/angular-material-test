@@ -10,6 +10,7 @@ import { AdminDashboardComponent } from './components/admin/admin-dashboard/admi
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { AddClassComponent } from './components/admin/add-class/add-class.component';
 import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
+import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
 
 const routes: Routes = [
   {
@@ -44,6 +45,9 @@ const routes: Routes = [
   },
   {
     path:'temp3' ,component:StudentAttendanceComponent
+  },
+  {
+    path:'temp4' ,component:ShowCalendarComponent
   },
   
 
