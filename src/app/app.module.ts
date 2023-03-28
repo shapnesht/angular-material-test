@@ -28,6 +28,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { ViewAllStudentsComponent } from './components/teacher/view-all-students/view-all-students.component';
+import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 
@@ -46,6 +49,7 @@ import { ViewAllStudentsComponent } from './components/teacher/view-all-students
     StudentDashboardComponent,
     AddClassComponent,
     ViewAllStudentsComponent,
+    TakeAttendanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,8 @@ import { ViewAllStudentsComponent } from './components/teacher/view-all-students
     MatFormFieldModule,
     MatSnackBarModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
