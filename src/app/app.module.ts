@@ -14,33 +14,31 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { AddClassComponent } from './components/admin/add-class/add-class.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
 import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';  
-import { ViewAllStudentsComponent } from './components/teacher/view-all-students/view-all-students.component';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
-import {MatRadioModule} from '@angular/material/radio';
-
-
-
+import { MatRadioModule } from '@angular/material/radio';
+import { ModifyAttendanceComponent } from './components/teacher/modify-attendance/modify-attendance.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +54,11 @@ import {MatRadioModule} from '@angular/material/radio';
     AdminDashboardComponent,
     StudentDashboardComponent,
     AddClassComponent,
-    ViewAllStudentsComponent,
+    TakeAttendanceComponent,
+    ShowCalendarComponent,
+    StudentAttendanceComponent,
+    ModifyAttendanceComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,14 @@ import {MatRadioModule} from '@angular/material/radio';
     MatFormFieldModule,
     MatSnackBarModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatTimepickerModule,
+    MatInputModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],

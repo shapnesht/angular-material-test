@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-take-attendance',
-  templateUrl: './take-attendance.component.html',
-  styleUrls: ['./take-attendance.component.scss'],
+  selector: 'app-modify-attendance',
+  templateUrl: './modify-attendance.component.html',
+  styleUrls: ['./modify-attendance.component.scss'],
 })
-export class TakeAttendanceComponent {
+export class ModifyAttendanceComponent {
   selectedTime = null;
   data = {
     subject: '',
@@ -84,6 +84,4 @@ export class TakeAttendanceComponent {
 
   semesters = [1, 2, 3, 4, 5, 6, 7, 8];
   branches = ['IT', 'EC', 'EE', 'CE', 'ME'];
-
-  ngOnInit(): void {}
 }

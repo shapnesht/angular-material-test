@@ -13,6 +13,7 @@ import { AddClassComponent } from './components/admin/add-class/add-class.compon
 import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
 import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 
 const routes: Routes = [
@@ -54,6 +55,9 @@ const routes: Routes = [
   },
   {
     path:'take-attendance' ,component:TakeAttendanceComponent
+  },
+  {
+    path:'sign-in' ,component:SigninComponent
   },
   
 
