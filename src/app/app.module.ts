@@ -83,6 +83,7 @@ import { SigninComponent } from './components/signin/signin.component';
     MatNativeDateModule,
     NgxMatTimepickerModule,
     MatInputModule,
+    MatCardModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],

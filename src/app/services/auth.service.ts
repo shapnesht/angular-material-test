@@ -22,4 +22,13 @@ export class AuthService {
   public resetPassword(data: any) {
     return this.http.post(`${baseurl}/auth/reset-Password`, data);
   }
+  public getCurrentUser() {
+    return this.http.get(`${baseurl}/user/showMe`);
+  }
+  public getUser(id:any) {
+    return this.http.get(`${baseurl}/user/${id}`);
+  }
+  public updateUser(data:any) {
+    return this.http.patch(`${baseurl}/user/updateUser`, data);
+  }
 }
