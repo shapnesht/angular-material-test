@@ -44,6 +44,9 @@ import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
 import { CookieModule } from 'ngx-cookie';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StudentSidebarComponent } from './components/student/student-sidebar/student-sidebar.component';
+import { TeacherSidebarComponent } from './components/teacher/teacher-sidebar/teacher-sidebar.component';
+import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
 
 
 @NgModule({
@@ -68,6 +71,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     StudentHomepageComponent,
     TeacherHomepageComponent,
     AdminHomepageComponent,
+    StudentSidebarComponent,
+    TeacherSidebarComponent,
+    AdminSidebarComponent,
   ],
   imports: [
     BrowserModule,
