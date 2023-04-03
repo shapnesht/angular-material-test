@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -53,7 +52,6 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidenavComponent,
     HomeComponent,
     DashboardComponent,
     LandingpageComponent,
