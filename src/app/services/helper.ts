@@ -1,2 +1,3 @@
-let baseurl = "http://localhost:8080"
-module.exports = baseurl
+let baseurl = "http://localhost:5000/api/v1"
+
+export default baseurl

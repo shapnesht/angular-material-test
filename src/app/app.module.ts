@@ -39,6 +39,12 @@ import { TakeAttendanceComponent } from './take-attendance/take-attendance.compo
 import { MatRadioModule } from '@angular/material/radio';
 import { ModifyAttendanceComponent } from './components/teacher/modify-attendance/modify-attendance.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
+import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
+import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
+import { CookieModule } from 'ngx-cookie';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +65,9 @@ import { SigninComponent } from './components/signin/signin.component';
     StudentAttendanceComponent,
     ModifyAttendanceComponent,
     SigninComponent,
+    StudentHomepageComponent,
+    TeacherHomepageComponent,
+    AdminHomepageComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,7 +92,9 @@ import { SigninComponent } from './components/signin/signin.component';
     MatNativeDateModule,
     NgxMatTimepickerModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    CookieModule.withOptions(),
+    HttpClientModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],

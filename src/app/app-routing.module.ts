@@ -14,53 +14,27 @@ import { StudentAttendanceComponent } from './components/teacher/student-attenda
 import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
 import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
+import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
+import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
 
 
 const routes: Routes = [
   {
-    path:'home' ,component:HomeComponent
+    path:'' , component:LandingpageComponent
   },
   {
-    path:'dashboard' ,component:DashboardComponent
+    path:'login' , component:SigninComponent
   },
   {
-    path:'' , redirectTo: 'home', pathMatch:'full'
+    path:'admin' , component:AdminHomepageComponent
   },
   {
-    path:'landingpage' ,component:LandingpageComponent
+    path:'teacher' , component:TeacherHomepageComponent
   },
   {
-    path:'studentprofilepage' ,component:StudentprofilepageComponent
+    path:'student' , component:StudentHomepageComponent
   },
-  {
-    path:'resetpassword' ,component:ResetpasswordComponent
-  },
-  {
-    path:'forgotpassword' ,component:ForgotpasswordComponent
-  },
-  {
-    path:'temp' ,component:AdminDashboardComponent
-  },
-  {
-    path:'temp1' ,component:StudentDashboardComponent
-  },
-  {
-    path:'temp2' ,component:AddClassComponent
-  },
-  {
-    path:'temp3' ,component:StudentAttendanceComponent
-  },
-  {
-    path:'temp4' ,component:ShowCalendarComponent
-  },
-  {
-    path:'take-attendance' ,component:TakeAttendanceComponent
-  },
-  {
-    path:'sign-in' ,component:SigninComponent
-  },
-  
-
 ];
 
 @NgModule({

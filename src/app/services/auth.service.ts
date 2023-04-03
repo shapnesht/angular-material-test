@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie';
+import baseurl from './helper';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cookie:CookieService) { }
 
   public registerForAdmin(data: any) {
     return this.http.post(`${baseurl}/auth/registerAdmin`, data);
@@ -25,10 +27,13 @@ export class AuthService {
   public getCurrentUser() {
     return this.http.get(`${baseurl}/user/showMe`);
   }
-  public getUser(id:any) {
+  public getUser(id: any) {
     return this.http.get(`${baseurl}/user/${id}`);
   }
-  public updateUser(data:any) {
+  public updateUser(data: any) {
     return this.http.patch(`${baseurl}/user/updateUser`, data);
+  }
+  public isLoggedIn() {
+    console.log(this.cookie.getAll());
   }
 }

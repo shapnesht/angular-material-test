@@ -1,23 +1,14 @@
-
 <mat-toolbar>
-  <mat-toolbar-row class="justify-start">
+  <mat-toolbar-row class="justify-start bg-gray-800 text-white">
     <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
     <!-- <span class="example-spacer"></span> -->
-    <div class=" mr-2 ml-auto">
+    <div class="mr-2 ml-auto">
       <ul>
-        <li>
-          <button
-            mat-button
-            [matMenuTriggerFor]="menu"
-            class="user mt-2 flex items-center"
-          >
-            <img
-              src="../../assets/graduated.png"
-              alt=""
-              class="user-image p-2"
-            />
+        <li *ngIf="isLoggedIn()">
+          <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 flex items-center">
+            <img src="../../assets/graduated.png" alt="" class="user-image p-2" />
             <mat-icon class="user-image-icon">keyboard_arrow_down</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
@@ -26,6 +17,14 @@
               Logout
             </button>
           </mat-menu>
+        </li>
+        <li *ngIf="!isLoggedIn()">
+          <button mat-button class="user mt-2 flex items-center">
+            <p class="text-lg" routerLink="/login">Login</p>
+          </button>
+          <button mat-button class="user mt-2 flex items-center">
+            <p class="text-lg" routerLink="/register">Sign Up</p>
+          </button>
         </li>
       </ul>
     </div>
