@@ -7,31 +7,35 @@ import baseurl from './helper';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private cookie:CookieService) { }
+  private config = {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true
+  }
+  constructor(private http: HttpClient, private cookie: CookieService) { }
 
   public registerForAdmin(data: any) {
-    return this.http.post(`${baseurl}/auth/registerAdmin`, data);
+    return this.http.post(`${baseurl}/auth/registerAdmin`, data, this.config);
   }
   public login(data: any) {
-    return this.http.post(`${baseurl}/auth/login`, data);
+    return this.http.post(`${baseurl}/auth/login`, data, this.config);
   }
   public logout() {
-    return this.http.delete(`${baseurl}/auth/logout`);
+    return this.http.delete(`${baseurl}/auth/logout`, this.config);
   }
   public forgotPassword(data: any) {
-    return this.http.post(`${baseurl}/auth/forgot-Password`, data);
+    return this.http.post(`${baseurl}/auth/forgot-Password`, data, this.config);
   }
   public resetPassword(data: any) {
-    return this.http.post(`${baseurl}/auth/reset-Password`, data);
+    return this.http.post(`${baseurl}/auth/reset-Password`, data, this.config);
   }
   public getCurrentUser() {
-    return this.http.get(`${baseurl}/user/showMe`);
+    return this.http.get(`${baseurl}/user/showMe`, this.config);
   }
   public getUser(id: any) {
-    return this.http.get(`${baseurl}/user/${id}`);
+    return this.http.get(`${baseurl}/user/${id}`, this.config);
   }
   public updateUser(data: any) {
-    return this.http.patch(`${baseurl}/user/updateUser`, data);
+    return this.http.patch(`${baseurl}/user/updateUser`, data, this.config);
   }
   public isLoggedIn() {
     console.log(this.cookie.getAll());

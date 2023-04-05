@@ -99,6 +99,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/shopworks",
+            "netlifyToken": "F7SdmUyxg3P6CgjzBXD5OnsQ5mO_FVL4vzLdWEoJ0PY",
+            "siteId": "91892014-f09f-412c-a435-16bb492099dc"
+          }
         }
       }
     }

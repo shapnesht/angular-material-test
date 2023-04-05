@@ -27,7 +27,10 @@ const routes: Routes = [
     path:'login' , component:SigninComponent
   },
   {
-    path:'admin' , component:AdminHomepageComponent
+    path:'admin' , component:AdminHomepageComponent,
+    children:[
+      
+    ]
   },
   {
     path:'teacher' , component:TeacherHomepageComponent

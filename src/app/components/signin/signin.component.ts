@@ -30,6 +30,10 @@ export class SigninComponent {
         if (data.user.role === "admin") this.router.navigate(["/admin"])
         if (data.user.role === "student") this.router.navigate(["/student"])
         if (data.user.role === "teacher") this.router.navigate(["/teacher"])
+        this.authService.getCurrentUser().subscribe({
+          next:(data)=>{console.log(data)},
+          error:(error)=>{console.log(error)}
+        })
       },
       error: (error) => {
         console.log(error);
