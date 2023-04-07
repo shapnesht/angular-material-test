@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,28 +8,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./admin-dashboard.component.scss'],
 })
 export class AdminDashboardComponent {
-  data:any = {}
+  data: any = {}
+  getSelectedYear = 2029
   public constructor(private authService: AuthService) {
     this.data = authService.getUserDetails();
+    this.getSelectedYear = new Date().getFullYear()
   }
-
-  classes = {
-    batches: [
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-    ],
+  // Pie Chart
+  public pieChartOptions: ChartOptions<'pie'> = {
+    responsive: false,
   };
+  public pieChartLabels = ['IT', 'EC', 'ME', 'CE', 'EE'];
+  public pieChartStudentDatasets = [{
+    data: [300, 273, 213, 224, 199]
+  }];
+  public pieChartTeacherDatasets = [{
+    data: [5, 12, 13, 9, 4]
+  }];
+
 }

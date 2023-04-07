@@ -5,12 +5,27 @@
     </div>
     <mat-divider></mat-divider>
     <h2 mat-subheader class="mt-2">APPLICATIONS</h2>
-
-    <a mat-list-item routerLink="/teacher">
+    <a mat-list-item routerLink="/admin">
         <div class="flex align-middle">
-            <div><mat-icon>menu_book</mat-icon></div>
+            <div><mat-icon>dashboard</mat-icon></div>
             <div>
-                <h1>My Classes</h1>
+                <h1>Dashboard</h1>
+            </div>
+        </div>
+    </a>
+    <a mat-list-item routerLink="/admin/students">
+        <div class="flex align-middle">
+            <div><mat-icon>diversity_1</mat-icon></div>
+            <div>
+                <h1>Manage Students</h1>
+            </div>
+        </div>
+    </a>
+    <a mat-list-item routerLink="/admin/teacher">
+        <div class="flex align-middle">
+            <div><mat-icon>diversity_3</mat-icon></div>
+            <div>
+                <h1>Manage Teachers</h1>
             </div>
         </div>
     </a>
@@ -38,11 +53,4 @@
             </div>
         </div>
     </a>
-    <!-- <a mat-list-item routerLink="/" routerLinkActive="list-item-active">
-        <mat-icon>photo_library</mat-icon> Gallery
-    </a>
-    <a mat-list-item> <mat-icon>events</mat-icon> events </a>
-    <a mat-list-item> <mat-icon>library</mat-icon> library </a>
-    <a mat-list-item> <mat-icon>courses</mat-icon> courses </a>
-    <a mat-list-item> <mat-icon>contact</mat-icon> about us </a> -->
 </mat-nav-list>

@@ -39,13 +39,13 @@ import { StudentHomepageComponent } from './components/student/student-homepage/
 import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
 import { CookieModule } from 'ngx-cookie';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { StudentSidebarComponent } from './components/student/student-sidebar/student-sidebar.component';
 import { TeacherSidebarComponent } from './components/teacher/teacher-sidebar/teacher-sidebar.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
-
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -97,6 +97,7 @@ import { AddClassComponent } from './components/teacher/add-class/add-class.comp
     MatCardModule,
     CookieModule.withOptions(),
     HttpClientModule,
+    NgChartsModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
