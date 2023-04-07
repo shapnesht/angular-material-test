@@ -1,5 +1,11 @@
 <app-header></app-header>
 <section class="text-gray-400 bg-gray-700 body-font min-h-full w-full">
+  <div *ngIf="isLoggedIn()" routerLink="/teacher" class="text-white hover:cursor-pointer flex align-middle justify-center p-2 pb-0">
+    <div><mat-icon>home</mat-icon></div>
+    <div class="pl-2">
+      <h1>Return To Home</h1>
+    </div>
+  </div>
   <div class="container px-5 py-4 mx-auto flex flex-wrap">
     <div class="flex w-full flex-wrap">
       <div class="flex">
@@ -7,7 +13,8 @@
         <div class="lg:pl-2">
           <h1 class="sm:text-3xl text-2xl font-medium title-font text-white w-full mb-2">We the Igecian's We are
             the future of this country!!</h1>
-          <p class="w-full hidden lg:block mx-auto leading-relaxed text-base">Vision: To produce a generation of engineering enabled in
+          <p class="w-full hidden lg:block mx-auto leading-relaxed text-base">Vision: To produce a generation of
+            engineering enabled in
             Economics, Environmental concern with Entrepreneur skills Empowered and Enthused for Sustainable Development
             of the society and country in the Competitive world.</p>
         </div>
@@ -24,22 +31,18 @@
             src="../../assets/gallery2.jpg">
         </div>
         <div class="md:p-2 p-1 w-full">
-          <img alt="gallery" class="w-600 h-360 object-cover object-center block"
-            src="../../assets/gallery4.jpg">
+          <img alt="gallery" class="w-600 h-360 object-cover object-center block" src="../../assets/gallery4.jpg">
         </div>
       </div>
       <div class="flex flex-wrap lg:w-1/2">
         <div class="md:p-2 p-1 w-full">
-          <img alt="gallery" class="w-601 h-361 object-cover object-center block"
-            src="../../assets/gallery3.jpg">
+          <img alt="gallery" class="w-601 h-361 object-cover object-center block" src="../../assets/gallery3.jpg">
         </div>
         <div class="md:p-2 p-1 w-1/2">
-          <img alt="gallery" class="w-502 object-cover h-302 object-center block"
-            src="../../assets/gallery5.jpeg">
+          <img alt="gallery" class="w-502 object-cover h-302 object-center block" src="../../assets/gallery5.jpeg">
         </div>
         <div class="md:p-2 p-1 w-1/2">
-          <img alt="gallery" class="w-503 object-cover h-72 object-center block"
-            src="../../assets/gallery6.avif">
+          <img alt="gallery" class="w-503 object-cover h-72 object-center block" src="../../assets/gallery6.avif">
         </div>
       </div>
     </div>

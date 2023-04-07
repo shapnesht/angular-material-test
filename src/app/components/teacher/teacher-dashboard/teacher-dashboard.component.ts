@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-teacher-dashboard',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./teacher-dashboard.component.scss']
 })
 export class TeacherDashboardComponent {
-  name: string = 'ashi';
+  data: any = {}
+  public constructor(private authService: AuthService) {
+    this.data = authService.getUserDetails();
+  }
 
   classes = {
     batches: [
