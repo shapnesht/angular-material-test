@@ -46,6 +46,7 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { NgChartsModule } from 'ng2-charts';
+import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { NgChartsModule } from 'ng2-charts';
     TeacherSidebarComponent,
     AdminSidebarComponent,
     TeacherDashboardComponent,
-    AddClassComponent
+    AddClassComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,

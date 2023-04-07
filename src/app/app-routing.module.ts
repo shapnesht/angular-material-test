@@ -18,6 +18,7 @@ import { AdminGuardGuard } from './guards/admin-guard.guard';
 import { TeacherGuardGuard } from './guards/teacher-guard.guard';
 import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
+import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 
 
 const routes: Routes = [
@@ -54,9 +55,18 @@ const routes: Routes = [
       {
         path:'',
         component:StudentDashboardComponent
-      }
+      },
+      {
+        path:'profile',
+        component:StudentprofilepageComponent
+      },
+
     ]
   },
+  {
+    path: 'library',
+    component: UnderConstructionComponent
+  }
 ];
 
 @NgModule({
