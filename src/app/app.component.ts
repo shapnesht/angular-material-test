@@ -7,14 +7,4 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'shopworks';
-  sideBarOpen = true;
-  public constructor(private auth: AuthService) {
-    console.log(auth.isLoggedIn());
-  }
-  ngOnInit() { }
-
-  sideBarToggler() {
-    this.sideBarOpen = !this.sideBarOpen;
-  }
 }

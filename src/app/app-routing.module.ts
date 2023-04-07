@@ -1,42 +1,61 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HomeComponent } from './components/home/home.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
+import { StudentprofilepageComponent } from './components/student/studentprofilepage/studentprofilepage.component';
+import { ResetpasswordComponent } from './components/pages/resetpassword/resetpassword.component';
+import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
-import { AddClassComponent } from './components/admin/add-class/add-class.component';
 
 import { StudentAttendanceComponent } from './components/teacher/student-attendance/student-attendance.component';
 import { ShowCalendarComponent } from './components/teacher/show-calendar/show-calendar.component';
-import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { TakeAttendanceComponent } from './components/teacher/take-attendance/take-attendance.component';
+import { SigninComponent } from './components/pages/signin/signin.component';
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
 import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
 import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
+import { AdminGuardGuard } from './guards/admin-guard.guard';
+import { TeacherGuardGuard } from './guards/teacher-guard.guard';
+import { StudentGuardGuard } from './guards/student-guard.guard';
+import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 
 
 const routes: Routes = [
   {
-    path:'' , component:LandingpageComponent
+    path: '', component: LandingpageComponent
   },
   {
-    path:'login' , component:SigninComponent
+    path: 'login', component: SigninComponent
   },
   {
-    path:'admin' , component:AdminHomepageComponent,
-    children:[
-      
+    path: 'admin', component: AdminHomepageComponent,
+    canActivate: [AdminGuardGuard],
+    children: [
+      {
+        path:'',
+        component:AdminDashboardComponent
+      }
     ]
   },
   {
-    path:'teacher' , component:TeacherHomepageComponent
+    path: 'teacher', component: TeacherHomepageComponent,
+    canActivate: [TeacherGuardGuard],
+    children:[
+      {
+        path:'',
+        component:TeacherDashboardComponent
+      }
+    ]
   },
   {
-    path:'student' , component:StudentHomepageComponent
+    path: 'student', component: StudentHomepageComponent,
+    canActivate: [StudentGuardGuard],
+    children:[
+      {
+        path:'',
+        component:StudentDashboardComponent
+      }
+    ]
   },
 ];
 

@@ -27,18 +27,14 @@ export class SigninComponent {
     }
     this.authService.login(this.loginData).subscribe({
       next: (data: any) => {
-        if (data.user.role === "admin") this.router.navigate(["/admin"])
-        if (data.user.role === "student") this.router.navigate(["/student"])
-        if (data.user.role === "teacher") this.router.navigate(["/teacher"])
-        this.authService.getCurrentUser().subscribe({
-          next:(data)=>{console.log(data)},
-          error:(error)=>{console.log(error)}
-        })
+        this.authService.loginUser(data.user)
+        if (data.user.role == "admin") {this.router.navigate(["/admin"])}
+        if (data.user.role == "student") this.router.navigate(["/student"])
+        if (data.user.role == "teacher") this.router.navigate(["/teacher"])
       },
       error: (error) => {
         console.log(error);
       }
     })
-    console.log(this.authService.isLoggedIn());
   }
 }

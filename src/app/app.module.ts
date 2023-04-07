@@ -3,9 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeaderComponent } from './components/pages/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,14 +12,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { StudentprofilepageComponent } from './studentprofilepage/studentprofilepage.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
-import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { LandingpageComponent } from './components/pages/landingpage/landingpage.component';
+import { StudentprofilepageComponent } from './components/student/studentprofilepage/studentprofilepage.component';
+import { ResetpasswordComponent } from './components/pages/resetpassword/resetpassword.component';
+import { ForgotpasswordComponent } from './components/pages/forgotpassword/forgotpassword.component';
 import { AdminDashboardComponent } from './components/admin/admin-dashboard/admin-dashboard.component';
 import { MatButtonModule } from '@angular/material/button';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
-import { AddClassComponent } from './components/admin/add-class/add-class.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
@@ -34,10 +31,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
-import { TakeAttendanceComponent } from './take-attendance/take-attendance.component';
+import { TakeAttendanceComponent } from './components/teacher/take-attendance/take-attendance.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { ModifyAttendanceComponent } from './components/teacher/modify-attendance/modify-attendance.component';
-import { SigninComponent } from './components/signin/signin.component';
+import { SigninComponent } from './components/pages/signin/signin.component';
 import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
 import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
@@ -46,21 +43,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StudentSidebarComponent } from './components/student/student-sidebar/student-sidebar.component';
 import { TeacherSidebarComponent } from './components/teacher/teacher-sidebar/teacher-sidebar.component';
 import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-sidebar.component';
+import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
+import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent,
-    DashboardComponent,
     LandingpageComponent,
     StudentprofilepageComponent,
     ResetpasswordComponent,
     ForgotpasswordComponent,
     AdminDashboardComponent,
     StudentDashboardComponent,
-    AddClassComponent,
     TakeAttendanceComponent,
     ShowCalendarComponent,
     StudentAttendanceComponent,
@@ -72,6 +68,8 @@ import { AdminSidebarComponent } from './components/admin/admin-sidebar/admin-si
     StudentSidebarComponent,
     TeacherSidebarComponent,
     AdminSidebarComponent,
+    TeacherDashboardComponent,
+    AddClassComponent
   ],
   imports: [
     BrowserModule,

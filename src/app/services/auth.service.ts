@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie';
 import baseurl from './helper';
+import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +11,16 @@ export class AuthService {
     headers: { "Content-Type": "application/json" },
     withCredentials: true
   }
-  constructor(private http: HttpClient, private cookie: CookieService) { }
+  constructor(private http: HttpClient) { }
 
   public registerForAdmin(data: any) {
     return this.http.post(`${baseurl}/auth/registerAdmin`, data, this.config);
   }
   public login(data: any) {
-    return this.http.post(`${baseurl}/auth/login`, data, this.config);
+    return this.http.post(`${baseurl}/auth/login`, data, { withCredentials: true });
+  }
+  public loginUser(data: any) {
+    localStorage.setItem("user", JSON.stringify(data))
   }
   public logout() {
     return this.http.delete(`${baseurl}/auth/logout`, this.config);
@@ -38,6 +41,23 @@ export class AuthService {
     return this.http.patch(`${baseurl}/user/updateUser`, data, this.config);
   }
   public isLoggedIn() {
-    console.log(this.cookie.getAll());
+    return localStorage.getItem("user") != null;
   }
+  public getUserDetails() {
+    let userData = localStorage.getItem("user");
+    if (userData == undefined || userData == null || userData == '') {
+      this.logout();
+      return null;
+    } else {
+      return JSON.parse(userData);
+    }
+  }
+
+  // get User Role
+  public getUserRole() {
+    let user = this.getUserDetails();
+    if(user == null) return null;
+    return user.role;
+  }
+
 }
