@@ -12,6 +12,7 @@ export class AdminGuardGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isLoggedIn()) {
+      let data = this.authService.getUserDetailsBackend()
       if (this.authService.getUserRole() == "admin") {
         return true
       } else if (this.authService.getUserRole() == "teacher") {

@@ -1,34 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { StudentandteacherService } from 'src/app/services/studentandteacher.service';
 
 @Component({
   selector: 'app-teacher-dashboard',
   templateUrl: './teacher-dashboard.component.html',
   styleUrls: ['./teacher-dashboard.component.scss']
 })
-export class TeacherDashboardComponent {
+export class TeacherDashboardComponent implements OnInit {
   data: any = {}
-  public constructor(private authService: AuthService) {
-    this.data = authService.getUserDetails();
+  public constructor(private authService: AuthService, private teacherService: StudentandteacherService) {
+  }
+  ngOnInit(): void {
+    this.data = this.authService.getUserDetails();
+    this.teacherService.getBatchesOfTeachers().subscribe({
+      next:(data:any) => {
+        this.classes = data
+      },
+      error:(err)=>console.log(err)
+    })
   }
 
-  classes = {
-    batches: [
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-      {
-        _id: '63e24077ea3acbd4c6be0bb4',
-        subject: 'TOC',
-        noOfStudents: 2,
-      },
-    ],
-  };
+
+  classes:any;
 }

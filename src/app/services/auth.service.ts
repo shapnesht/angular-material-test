@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import baseurl from './helper';
-import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -51,6 +50,12 @@ export class AuthService {
     } else {
       return JSON.parse(userData);
     }
+  }
+  public async getUserDetailsBackend() {
+    this.getCurrentUser().subscribe({
+      next:(data:any)=>{return data;},
+      error:(err)=>{console.log(err);}
+    })
   }
 
   // get User Role

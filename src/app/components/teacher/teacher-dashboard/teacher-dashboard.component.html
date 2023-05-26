@@ -5,7 +5,7 @@
 
     </div>
     <h1 class="text-2xl px-3 font-bold">MY CLASSES</h1>
-    <div class="border-2 px-3 w-full mt-2">
+    <div class="border-2 px-3 w-full mt-2" *ngIf="classes">
         <div *ngFor="let class of classes.batches; odd as isOdd; even as isEven">
             <div [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
                 class="flex w-full justify-between p-2 py-4">
@@ -13,13 +13,13 @@
                     <h2 class="font-bold">{{ class.subject }}</h2>
                 </div>
                 <div>
-                    <button mat-raised-button class="mr-2">Take attendence</button>
-                    <button mat-raised-button>Statistics</button>
+                    <button mat-raised-button class="mr-2" [routerLink]="'/teacher/classes/'+class._id">Take attendence</button>
+                    <button mat-raised-button [routerLink]="'/teacher/stats/'+class._id">Statistics</button>
                 </div>
             </div>
         </div>
     </div>
     <div class="flex justify-center">
-        <button mat-raised-button class="mx-auto mt-5">Add class</button>
+        <button mat-raised-button class="mx-auto mt-5" routerLink="/teacher/add-class">Add class</button>
     </div>
 </mat-card>

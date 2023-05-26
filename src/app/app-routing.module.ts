@@ -19,6 +19,7 @@ import { TeacherGuardGuard } from './guards/teacher-guard.guard';
 import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
+import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 
 
 const routes: Routes = [
@@ -33,32 +34,48 @@ const routes: Routes = [
     canActivate: [AdminGuardGuard],
     children: [
       {
-        path:'',
-        component:AdminDashboardComponent
+        path: '',
+        component: AdminDashboardComponent
       }
     ]
   },
   {
     path: 'teacher', component: TeacherHomepageComponent,
     canActivate: [TeacherGuardGuard],
-    children:[
+    children: [
       {
-        path:'',
-        component:TeacherDashboardComponent
-      }
+        path: '',
+        component: TeacherDashboardComponent
+      },
+      {
+        path: 'add-class',
+        component: AddClassComponent
+      },
+      {
+        path: 'classes/:id',
+        component: ShowCalendarComponent
+      },
+      {
+        path: 'stats/:id',
+        component: StudentAttendanceComponent
+      },
+      {
+        path: 'attendance/:id',
+        component: TakeAttendanceComponent
+      },
     ]
   },
   {
     path: 'student', component: StudentHomepageComponent,
     canActivate: [StudentGuardGuard],
-    children:[
+    children: [
       {
-        path:'',
-        component:StudentDashboardComponent
+        path: '',
+        component: StudentDashboardComponent
       },
       {
-        path:'profile',
-        component:StudentprofilepageComponent
+        path: 'profile',
+        component: StudentprofilepageComponent
       },
 
     ]

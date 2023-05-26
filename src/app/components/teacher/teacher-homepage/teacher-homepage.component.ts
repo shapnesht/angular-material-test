@@ -10,7 +10,6 @@ export class TeacherHomepageComponent {
   title = 'shopworks';
   sideBarOpen = true;
   public constructor(private auth: AuthService) {
-    console.log(auth.isLoggedIn());
   }
   ngOnInit() { }
 

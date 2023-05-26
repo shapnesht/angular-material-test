@@ -5,16 +5,16 @@
         <h2 class="font-normal p-3 text-xl">Select Date to view and take Attendance</h2>
         <mat-form-field appearance="fill">
             <mat-label>Choose a date</mat-label>
-            <input matInput [(ngModel)]="selected" [matDatepicker]="picker">
+            <input matInput [(ngModel)]="data.date" [matDatepicker]="picker">
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <button class="p-3 ml-5 mt-2" mat-raised-button color="primary">Fetch Classes</button>
+        <button class="p-3 ml-5 mt-2" mat-raised-button color="primary" (click)="fetchClasses()">Fetch Classes</button>
     </div>
     <div>
-        <h1 class="font-medium p-3 text-xl">Attendances on {{selected}}</h1>
+        <h1 class="font-medium p-3 text-xl" *ngIf="attendances.attendances.length > 0">Attendances on {{data.date}}</h1>
     </div>
-    <div class="w-full mt-2 p-3">
+    <div class="w-full mt-2 p-3" *ngIf= "attendances.attendances">
         <div *ngFor="let attendance of attendances.attendances; odd as isOdd; even as isEven">
             <div [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
                 class="flex w-full justify-around p-2 py-4">
@@ -35,6 +35,6 @@
         </div>
     </div>
     <div class="flex justify-center">
-        <button mat-raised-button class="mx-auto mt-5">Take new Attendance</button>
+        <button mat-raised-button class="mx-auto mt-5" (click)="takeNewAttendance()">Take new Attendance</button>
     </div>
 </mat-card>
