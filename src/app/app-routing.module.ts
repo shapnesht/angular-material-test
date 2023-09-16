@@ -20,6 +20,8 @@ import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
+import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
+import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,15 @@ const routes: Routes = [
       {
         path: '',
         component: AdminDashboardComponent
-      }
+      },
+      {
+        path: 'view-batch',
+        component: ViewBatchDetailsComponent
+      },
+      {
+        path: 'allot-enrollment-number',
+        component: AllotEnrollmentNumberComponent
+      },
     ]
   },
   {
