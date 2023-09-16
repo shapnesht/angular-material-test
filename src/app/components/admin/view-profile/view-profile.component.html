@@ -1,0 +1,56 @@
+<mat-card class="mx-3 h-full gray-background">
+  <div class="px-5 w-full mt-2">
+    <h1 class="font-semibold p-3 text-xl">My Profile</h1>
+    <div class="flex flex-wrap -mx-3 w-full justify-center">
+      <div class="w-full md:w-full max-w-lg px-3 mb-6 md:mb-0">
+        <div class="flex w-full items-center">
+          <input
+            class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            name="email"
+            type="email"
+            placeholder="Enter Your E-mail"
+          />
+          <button mat-raised-button class="w-1/2 ml-2 mb-3">
+            Fetch Details
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col">
+      <div class="container">
+        <div class="container justify-center flex items-center">
+          <img class="profile-image" [src]="user.image" alt="Profile Image" />
+        </div>
+        <div class="row m-4">
+          <div class="col-md-10 offset-md-1">
+            <table class="table text-center">
+              <tr *ngIf="user.name">
+                <td>Name</td>
+                <td>{{ user.name }}</td>
+              </tr>
+              <tr *ngIf="user.branch">
+                <td>Branch</td>
+                <td>{{ user.branch }}</td>
+              </tr>
+              <tr *ngIf="user.yearOfAdmission">
+                <td>Year Of Admission</td>
+                <td>{{ user.yearOfAdmission }}</td>
+              </tr>
+              <tr *ngIf="user.email">
+                <td>Email</td>
+                <td>{{ user.email }}</td>
+              </tr>
+              <tr *ngIf="user.role">
+                <td>Role</td>
+                <td>{{ user.role }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-card-actions class="text-center mb10 mt10 justify-center">
+      <button mat-raised-button class="mr-3">Save Details</button>
+    </mat-card-actions>
+  </div>
+</mat-card>
