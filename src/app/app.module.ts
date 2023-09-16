@@ -38,7 +38,6 @@ import { SigninComponent } from './components/pages/signin/signin.component';
 import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
 import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
-import { CookieModule } from 'ngx-cookie';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentSidebarComponent } from './components/student/student-sidebar/student-sidebar.component';
 import { TeacherSidebarComponent } from './components/teacher/teacher-sidebar/teacher-sidebar.component';
@@ -56,6 +55,9 @@ import { RecoverUserComponent } from './components/admin/recover-user/recover-us
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
 import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
+import { LibrarySidebarComponent } from './components/library/library-sidebar/library-sidebar.component';
+import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
+import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,10 @@ import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollm
     ViewProfileComponent,
     AddNewMemberComponent,
     DeleteMemberComponent,
-    RecoverUserComponent
+    RecoverUserComponent,
+    LibrarySidebarComponent,
+    LibraryHomepageComponent,
+    LibraryDashboardComponent
   ],
   imports: [
     BrowserModule,

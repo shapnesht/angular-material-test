@@ -28,6 +28,8 @@ import { ViewProfileComponent } from './components/admin/view-profile/view-profi
 import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
 import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
 import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
+import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
+import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
 
 
 const routes: Routes = [
@@ -80,7 +82,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'teacher', 
+    path: 'teacher',
     component: TeacherHomepageComponent,
     canActivate: [TeacherGuardGuard],
     children: [
@@ -123,8 +125,22 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    component: UnderConstructionComponent
-  }
+    component: LibraryHomepageComponent,
+    children: [
+      {
+        path: '',
+        component: LibraryDashboardComponent
+      }
+    ]
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotpasswordComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetpasswordComponent
+  },
 ];
 
 @NgModule({
