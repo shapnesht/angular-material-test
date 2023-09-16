@@ -53,7 +53,6 @@ const routes: Routes = [
         path: 'allot-enrollment-number',
         component: AllotEnrollmentNumberComponent
       },
-      },
       {
         path: 'library',
         component: LibraryDetailsComponent
@@ -81,7 +80,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'teacher', component: TeacherHomepageComponent,
+    path: 'teacher', 
+    component: TeacherHomepageComponent,
     canActivate: [TeacherGuardGuard],
     children: [
       {
