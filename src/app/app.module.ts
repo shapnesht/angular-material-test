@@ -53,6 +53,9 @@ import { ViewProfileComponent } from './components/admin/view-profile/view-profi
 import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
 import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
 import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
+import { SignupComponent } from './components/pages/signup/signup.component';
+import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
+import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,10 @@ import { RecoverUserComponent } from './components/admin/recover-user/recover-us
     AdminSidebarComponent,
     TeacherDashboardComponent,
     AddClassComponent,
+    UnderConstructionComponent,
+    SignupComponent,
+    ViewBatchDetailsComponent,
+    AllotEnrollmentNumberComponent,
     UnderConstructionComponent,
     LibraryDetailsComponent,
     UpdateProfileComponent,
@@ -109,11 +116,10 @@ import { RecoverUserComponent } from './components/admin/recover-user/recover-us
     NgxMatTimepickerModule,
     MatInputModule,
     MatCardModule,
-    CookieModule.withOptions(),
     HttpClientModule,
     NgChartsModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
