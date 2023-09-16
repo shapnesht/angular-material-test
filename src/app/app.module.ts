@@ -47,6 +47,7 @@ import { TeacherDashboardComponent } from './components/teacher/teacher-dashboar
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { NgChartsModule } from 'ng2-charts';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
+import { SignupComponent } from './components/pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { UnderConstructionComponent } from './components/pages/under-constructio
     AdminSidebarComponent,
     TeacherDashboardComponent,
     AddClassComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -97,11 +99,10 @@ import { UnderConstructionComponent } from './components/pages/under-constructio
     NgxMatTimepickerModule,
     MatInputModule,
     MatCardModule,
-    CookieModule.withOptions(),
     HttpClientModule,
     NgChartsModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
