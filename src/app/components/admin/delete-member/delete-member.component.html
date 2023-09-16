@@ -1,0 +1,27 @@
+<mat-card class="m-3 h-full gray-background">
+  <h1 class="font-semibold p-3 text-xl">Delete User</h1>
+  <mat-card-content>
+    <form class="w-full max-w-lg mx-auto">
+      <div class="flex flex-wrap -mx-3">
+        <div class="w-full md:w-full px-3 mb-6 md:mb-0">
+          <div class="flex w-full items-center">
+            <input
+              class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              name="email"
+              type="email"
+              placeholder="Enter Your E-mail"
+            />
+            <button mat-raised-button class="w-1/2 ml-2 mb-3">
+              Fetch Details
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full mb-3">
+        <button mat-raised-button class="w-full" color="warn">
+          Delete User
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

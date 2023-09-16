@@ -1,0 +1,86 @@
+<mat-card class="m-3 h-full gray-background">
+  <h1 class="font-semibold p-3 text-xl">Add New Member</h1>
+  <mat-card-content>
+    <form class="w-full max-w-lg mx-auto">
+      <div>
+        <label
+          class="block tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-first-name"
+        >
+          E-mail
+        </label>
+        <input
+          class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          name="e-mail"
+          type="email"
+          placeholder="Enter E-mail"
+        />
+        <label
+          class="block tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-first-name"
+        >
+          Name
+        </label>
+        <input
+          class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          name="name"
+          type="text"
+          placeholder="Enter Name"
+        />
+
+        <label
+          class="block tracking-wide text-gray-700 text-xs font-bold mb-2"
+          for="grid-first-name"
+        >
+          Year Of Joining
+        </label>
+
+        <input
+          class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          name="yearOfAdmission"
+          type="text"
+          placeholder="Year of Joining"
+        />
+      </div>
+      <div class="flex justify-between px-3 w-full">
+        <div class="w-full md:w-1/2 mt-3">
+          <label
+            class="block tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            Select Role
+          </label>
+          <mat-form-field appearance="fill">
+            <mat-label>Role</mat-label>
+            <mat-select [(ngModel)]="data.semester" name="semesters">
+              <mat-option *ngFor="let Roleof; roles" [value]="Roleof">
+                {{ Roleof }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="w-full md:w-1/2 mt-3">
+          <label
+            class="block tracking-wide text-gray-700 text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            Select Branch
+          </label>
+          <mat-form-field appearance="fill">
+            <mat-label>Branch</mat-label>
+            <mat-select name="branch" [(ngModel)]="data.branch" name="branch">
+              <mat-option *ngFor="let branch of branches" [value]="branch">
+                {{ branch }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="w-full mb-3">
+        <button mat-raised-button class="w-full" color="primary">
+          Register User
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
