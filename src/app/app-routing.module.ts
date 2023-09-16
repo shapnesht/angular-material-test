@@ -20,6 +20,12 @@ import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
+import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
+import { UpdateProfileComponent } from './components/admin/update-profile/update-profile.component';
+import { ViewProfileComponent } from './components/admin/view-profile/view-profile.component';
+import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
+import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
+import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
 
 
 const routes: Routes = [
@@ -36,7 +42,31 @@ const routes: Routes = [
       {
         path: '',
         component: AdminDashboardComponent
-      }
+      },
+      {
+        path: 'library',
+        component: LibraryDetailsComponent
+      },
+      {
+        path: 'updateProfile',
+        component: UpdateProfileComponent
+      },
+      {
+        path: 'viewProfile',
+        component: ViewProfileComponent
+      },
+      {
+        path: 'addNewMember',
+        component: AddNewMemberComponent
+      },
+      {
+        path: 'deleteMember',
+        component: DeleteMemberComponent
+      },
+      {
+        path: 'recoverUser',
+        component: RecoverUserComponent
+      },
     ]
   },
   {

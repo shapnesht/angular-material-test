@@ -47,6 +47,12 @@ import { TeacherDashboardComponent } from './components/teacher/teacher-dashboar
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { NgChartsModule } from 'ng2-charts';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
+import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
+import { UpdateProfileComponent } from './components/admin/update-profile/update-profile.component';
+import { ViewProfileComponent } from './components/admin/view-profile/view-profile.component';
+import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
+import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
+import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +77,13 @@ import { UnderConstructionComponent } from './components/pages/under-constructio
     AdminSidebarComponent,
     TeacherDashboardComponent,
     AddClassComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    LibraryDetailsComponent,
+    UpdateProfileComponent,
+    ViewProfileComponent,
+    AddNewMemberComponent,
+    DeleteMemberComponent,
+    RecoverUserComponent
   ],
   imports: [
     BrowserModule,
