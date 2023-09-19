@@ -30,6 +30,7 @@ import { DeleteMemberComponent } from './components/admin/delete-member/delete-m
 import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
 import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
 import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component';
 
 
 const routes: Routes = [
@@ -105,6 +106,10 @@ const routes: Routes = [
       {
         path: 'attendance/:id',
         component: TakeAttendanceComponent
+      },
+      {
+        path: 'profile',
+        component: TeacherProfileComponent
       },
     ]
   },

@@ -58,6 +58,7 @@ import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollm
 import { LibrarySidebarComponent } from './components/library/library-sidebar/library-sidebar.component';
 import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
 import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component'
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { LibraryDashboardComponent } from './components/library/library-dashboar
     RecoverUserComponent,
     LibrarySidebarComponent,
     LibraryHomepageComponent,
-    LibraryDashboardComponent
+    LibraryDashboardComponent,
+    TeacherProfileComponent
   ],
   imports: [
     BrowserModule,
