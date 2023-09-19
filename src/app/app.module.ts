@@ -47,6 +47,8 @@ import { TeacherDashboardComponent } from './components/teacher/teacher-dashboar
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { NgChartsModule } from 'ng2-charts';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
+import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { UnderConstructionComponent } from './components/pages/under-constructio
     AdminSidebarComponent,
     TeacherDashboardComponent,
     AddClassComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    ManageStudentComponent,
+    ManageTeacherComponent
   ],
   imports: [
     BrowserModule,

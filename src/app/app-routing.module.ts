@@ -20,6 +20,8 @@ import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
+import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
 
 
 const routes: Routes = [
@@ -36,7 +38,17 @@ const routes: Routes = [
       {
         path: '',
         component: AdminDashboardComponent
-      }
+      },
+      {
+        path: 'manage-student',
+        component: ManageStudentComponent
+      },
+      {
+        path: 'manage-teacher',
+        component: ManageTeacherComponent
+      },
+      
+
     ]
   },
   {
