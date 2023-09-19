@@ -38,7 +38,6 @@ import { SigninComponent } from './components/pages/signin/signin.component';
 import { StudentHomepageComponent } from './components/student/student-homepage/student-homepage.component';
 import { TeacherHomepageComponent } from './components/teacher/teacher-homepage/teacher-homepage.component';
 import { AdminHomepageComponent } from './components/admin/admin-homepage/admin-homepage.component';
-import { CookieModule } from 'ngx-cookie';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentSidebarComponent } from './components/student/student-sidebar/student-sidebar.component';
 import { TeacherSidebarComponent } from './components/teacher/teacher-sidebar/teacher-sidebar.component';
@@ -49,6 +48,19 @@ import { NgChartsModule } from 'ng2-charts';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
 import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
+import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
+import { UpdateProfileComponent } from './components/admin/update-profile/update-profile.component';
+import { ViewProfileComponent } from './components/admin/view-profile/view-profile.component';
+import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
+import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
+import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
+import { SignupComponent } from './components/pages/signup/signup.component';
+import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
+import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
+import { LibrarySidebarComponent } from './components/library/library-sidebar/library-sidebar.component';
+import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
+import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component'
 
 @NgModule({
   declarations: [
@@ -75,7 +87,21 @@ import { ManageTeacherComponent } from './components/admin/manage-teacher/manage
     AddClassComponent,
     UnderConstructionComponent,
     ManageStudentComponent,
-    ManageTeacherComponent
+    ManageTeacherComponent,
+    SignupComponent,
+    ViewBatchDetailsComponent,
+    AllotEnrollmentNumberComponent,
+    UnderConstructionComponent,
+    LibraryDetailsComponent,
+    UpdateProfileComponent,
+    ViewProfileComponent,
+    AddNewMemberComponent,
+    DeleteMemberComponent,
+    RecoverUserComponent,
+    LibrarySidebarComponent,
+    LibraryHomepageComponent,
+    LibraryDashboardComponent,
+    TeacherProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -101,11 +127,10 @@ import { ManageTeacherComponent } from './components/admin/manage-teacher/manage
     NgxMatTimepickerModule,
     MatInputModule,
     MatCardModule,
-    CookieModule.withOptions(),
     HttpClientModule,
     NgChartsModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

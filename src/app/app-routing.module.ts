@@ -22,6 +22,17 @@ import { UnderConstructionComponent } from './components/pages/under-constructio
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
 import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
+import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
+import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
+import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
+import { UpdateProfileComponent } from './components/admin/update-profile/update-profile.component';
+import { ViewProfileComponent } from './components/admin/view-profile/view-profile.component';
+import { AddNewMemberComponent } from './components/admin/add-new-member/add-new-member.component';
+import { DeleteMemberComponent } from './components/admin/delete-member/delete-member.component';
+import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
+import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
+import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component';
 
 
 const routes: Routes = [
@@ -48,11 +59,43 @@ const routes: Routes = [
         component: ManageTeacherComponent
       },
       
-
+      {
+        path: 'view-batch',
+        component: ViewBatchDetailsComponent
+      },
+      {
+        path: 'allot-enrollment-number',
+        component: AllotEnrollmentNumberComponent
+      },
+      {
+        path: 'library',
+        component: LibraryDetailsComponent
+      },
+      {
+        path: 'updateProfile',
+        component: UpdateProfileComponent
+      },
+      {
+        path: 'viewProfile',
+        component: ViewProfileComponent
+      },
+      {
+        path: 'addNewMember',
+        component: AddNewMemberComponent
+      },
+      {
+        path: 'deleteMember',
+        component: DeleteMemberComponent
+      },
+      {
+        path: 'recoverUser',
+        component: RecoverUserComponent
+      },
     ]
   },
   {
-    path: 'teacher', component: TeacherHomepageComponent,
+    path: 'teacher',
+    component: TeacherHomepageComponent,
     canActivate: [TeacherGuardGuard],
     children: [
       {
@@ -75,6 +118,10 @@ const routes: Routes = [
         path: 'attendance/:id',
         component: TakeAttendanceComponent
       },
+      {
+        path: 'profile',
+        component: TeacherProfileComponent
+      },
     ]
   },
   {
@@ -94,8 +141,22 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    component: UnderConstructionComponent
-  }
+    component: LibraryHomepageComponent,
+    children: [
+      {
+        path: '',
+        component: LibraryDashboardComponent
+      }
+    ]
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotpasswordComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetpasswordComponent
+  },
 ];
 
 @NgModule({

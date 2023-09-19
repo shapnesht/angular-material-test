@@ -28,9 +28,10 @@ export class SigninComponent {
     this.authService.login(this.loginData).subscribe({
       next: (data: any) => {
         this.authService.loginUser(data.user)
-        if (data.user.role == "admin") {this.router.navigate(["/admin"])}
+        if (data.user.role == "admin") { this.router.navigate(["/admin"]) }
         if (data.user.role == "student") this.router.navigate(["/student"])
         if (data.user.role == "teacher") this.router.navigate(["/teacher"])
+        if (data.user.role == "librarian") this.router.navigate(["/library"])
       },
       error: (error) => {
         console.log(error);

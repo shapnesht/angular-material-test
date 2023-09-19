@@ -20,6 +20,9 @@ export class StudentGuardGuard {
       } else if (this.authService.getUserRole() == "admin") {
         this.router.navigate(["/admin"])
         return false
+      } else if (this.authService.getUserRole() == "librarian") {
+        this.router.navigate(["/library"])
+        return false
       }
     }
     this.router.navigate(["/login"])

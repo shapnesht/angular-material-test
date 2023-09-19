@@ -12,7 +12,7 @@ export class AttendanceServiceService {
     withCredentials: true
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public createAttendance(attendances: any) {
     return this.http.post(`${baseurl}/attendance/`, attendances, this.config);
