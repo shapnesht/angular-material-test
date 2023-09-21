@@ -21,6 +21,9 @@ export class AdminGuardGuard {
       } else if (this.authService.getUserRole() == "student") {
         this.router.navigate(["/student"])
         return false
+      } else if (this.authService.getUserRole() == "librarian") {
+        this.router.navigate(["/library"])
+        return false
       }
     }
     this.router.navigate(["/login"])

@@ -44,13 +44,13 @@
                 </div>
             </div>
             <div class="flex justify-center mb-3">
-                <button mat-raised-button class="w-2/6">Load Students</button>
+                <button mat-raised-button class="w-2/6" (click)="fetchStudents()">Load Students</button>
                 <mat-slide-toggle class="ml-5" name="viewStudents" [(ngModel)]="viewStudents">
                     <h1 class="text-lg">View Students</h1>
                 </mat-slide-toggle>
             </div>
             <div class="w-full mb-3">
-                <button mat-raised-button class="w-full" color="warn">Create Class</button>
+                <button mat-raised-button class="w-full" color="warn" (click)="createClass()">Create Class</button>
             </div>
             <div *ngIf="viewStudents && students.students.length > 0">
                 <div class="border-2 w-full mt-2">

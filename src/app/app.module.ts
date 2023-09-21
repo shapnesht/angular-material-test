@@ -46,6 +46,8 @@ import { TeacherDashboardComponent } from './components/teacher/teacher-dashboar
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
 import { NgChartsModule } from 'ng2-charts';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
+import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
 import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
 import { UpdateProfileComponent } from './components/admin/update-profile/update-profile.component';
 import { ViewProfileComponent } from './components/admin/view-profile/view-profile.component';
@@ -67,6 +69,7 @@ import { AvailbleBookComponent } from './components/library/availble-book/availb
 import { ShowNotReturnBookComponent } from './components/library/show-not-return-book/show-not-return-book.component';
 import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
 import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component'
 
 @NgModule({
   declarations: [
@@ -92,6 +95,8 @@ import { ViewStudentsComponent } from './components/library/view-students/view-s
     TeacherDashboardComponent,
     AddClassComponent,
     UnderConstructionComponent,
+    ManageStudentComponent,
+    ManageTeacherComponent,
     SignupComponent,
     ViewBatchDetailsComponent,
     AllotEnrollmentNumberComponent,
@@ -105,6 +110,7 @@ import { ViewStudentsComponent } from './components/library/view-students/view-s
     LibrarySidebarComponent,
     LibraryHomepageComponent,
     LibraryDashboardComponent,
+    TeacherProfileComponent,
     ManageBooksComponent,
     LibrarianProfileComponent,
     SearchBookComponent,

@@ -20,3 +20,22 @@ body {
 .w-400 {
   width: 400px;
 }
+.mat-snack-bar-handset {
+  margin-top: 75px !important;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table tr td {
+  padding: 10px 10px;
+  border: 0.5px solid rgb(248, 233, 233);
+}
+
+.profile-image {
+  max-height: 150px;
+  max-width: 150px;
+  border-radius: 50%;
+}

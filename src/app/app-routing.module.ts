@@ -20,6 +20,8 @@ import { StudentGuardGuard } from './guards/student-guard.guard';
 import { TeacherDashboardComponent } from './components/teacher/teacher-dashboard/teacher-dashboard.component';
 import { UnderConstructionComponent } from './components/pages/under-construction/under-construction.component';
 import { AddClassComponent } from './components/teacher/add-class/add-class.component';
+import { ManageStudentComponent } from './components/admin/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './components/admin/manage-teacher/manage-teacher.component';
 import { ViewBatchDetailsComponent } from './components/admin/view-batch-details/view-batch-details.component';
 import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollment-number/allot-enrollment-number.component';
 import { LibraryDetailsComponent } from './components/admin/library-details/library-details.component';
@@ -39,6 +41,8 @@ import { ReturnBookComponent } from './components/library/return-book/return-boo
 import { ShowNotReturnBookComponent } from './components/library/show-not-return-book/show-not-return-book.component';
 import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
 import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
+import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component';
+
 
 const routes: Routes = [
   {
@@ -56,7 +60,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: AdminDashboardComponent,
+        component: AdminDashboardComponent
       },
       {
         path: 'view-batch',
@@ -115,9 +119,13 @@ const routes: Routes = [
       },
       {
         path: 'attendance/:id',
-        component: TakeAttendanceComponent,
+        component: TakeAttendanceComponent
       },
-    ],
+      {
+        path: 'profile',
+        component: TeacherProfileComponent
+      },
+    ]
   },
   {
     path: 'student',

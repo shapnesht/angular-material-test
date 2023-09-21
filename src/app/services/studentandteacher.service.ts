@@ -28,4 +28,7 @@ export class StudentandteacherService {
     return this.http.get(`${baseurl}/teacher/batches`, this.config)
   }
 
+  public getStudentsByBatchAndBranch(data: any) {
+    return this.http.post(`${baseurl}/student/getAllStudentsByYearAndBranch`, data, this.config)
+  }
 }
