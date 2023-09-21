@@ -30,56 +30,67 @@ import { DeleteMemberComponent } from './components/admin/delete-member/delete-m
 import { RecoverUserComponent } from './components/admin/recover-user/recover-user.component';
 import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
 import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
-
+import { ManageBooksComponent } from './components/library/manage-books/manage-books.component';
+import { LibrarianProfileComponent } from './components/library/librarian-profile/librarian-profile.component';
+import { SearchBookComponent } from './components/library/search-book/search-book.component';
+import { IssueBookComponent } from './components/library/issue-book/issue-book.component';
+import { AvailbleBookComponent } from './components/library/availble-book/availble-book.component';
+import { ReturnBookComponent } from './components/library/return-book/return-book.component';
+import { ShowNotReturnBookComponent } from './components/library/show-not-return-book/show-not-return-book.component';
+import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
+import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
 
 const routes: Routes = [
   {
-    path: '', component: LandingpageComponent
+    path: '',
+    component: LandingpageComponent,
   },
   {
-    path: 'login', component: SigninComponent
+    path: 'login',
+    component: SigninComponent,
   },
   {
-    path: 'admin', component: AdminHomepageComponent,
+    path: 'admin',
+    component: AdminHomepageComponent,
     canActivate: [AdminGuardGuard],
     children: [
       {
         path: '',
-        component: AdminDashboardComponent
+        component: AdminDashboardComponent,
       },
       {
         path: 'view-batch',
-        component: ViewBatchDetailsComponent
+        component: ViewBatchDetailsComponent,
       },
       {
         path: 'allot-enrollment-number',
-        component: AllotEnrollmentNumberComponent
+        component: AllotEnrollmentNumberComponent,
       },
       {
-        path: 'library',
-        component: LibraryDetailsComponent
+        path: 'libraryAdmin',
+        component: LibraryDetailsComponent,
       },
       {
         path: 'updateProfile',
-        component: UpdateProfileComponent
+        component: UpdateProfileComponent,
       },
       {
         path: 'viewProfile',
-        component: ViewProfileComponent
+        component: ViewProfileComponent,
       },
       {
         path: 'addNewMember',
-        component: AddNewMemberComponent
+        component: AddNewMemberComponent,
       },
       {
         path: 'deleteMember',
-        component: DeleteMemberComponent
+        component: DeleteMemberComponent,
       },
       {
         path: 'recoverUser',
-        component: RecoverUserComponent
+        component: RecoverUserComponent,
       },
-    ]
+    ],
   },
   {
     path: 'teacher',
@@ -88,40 +99,40 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: TeacherDashboardComponent
+        component: TeacherDashboardComponent,
       },
       {
         path: 'add-class',
-        component: AddClassComponent
+        component: AddClassComponent,
       },
       {
         path: 'classes/:id',
-        component: ShowCalendarComponent
+        component: ShowCalendarComponent,
       },
       {
         path: 'stats/:id',
-        component: StudentAttendanceComponent
+        component: StudentAttendanceComponent,
       },
       {
         path: 'attendance/:id',
-        component: TakeAttendanceComponent
+        component: TakeAttendanceComponent,
       },
-    ]
+    ],
   },
   {
-    path: 'student', component: StudentHomepageComponent,
+    path: 'student',
+    component: StudentHomepageComponent,
     canActivate: [StudentGuardGuard],
     children: [
       {
         path: '',
-        component: StudentDashboardComponent
+        component: StudentDashboardComponent,
       },
       {
         path: 'profile',
-        component: StudentprofilepageComponent
+        component: StudentprofilepageComponent,
       },
-
-    ]
+    ],
   },
   {
     path: 'library',
@@ -129,22 +140,58 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: LibraryDashboardComponent
-      }
-    ]
+        component: LibraryDashboardComponent,
+      },
+      {
+        path: 'manageBooks',
+        component: ManageBooksComponent,
+      },
+      {
+        path: 'myprofile',
+        component: LibrarianProfileComponent,
+      },
+      {
+        path: 'searchbook',
+        component: SearchBookComponent,
+      },
+      {
+        path: 'issue-book',
+        component: IssueBookComponent,
+      },
+      {
+        path: 'availble-book',
+        component: AvailbleBookComponent,
+      },
+      {
+        path: 'return-book',
+        component: ReturnBookComponent,
+      },
+      {
+        path: 'showNotReturnBook',
+        component: ShowNotReturnBookComponent,
+      },
+      {
+        path: 'mostBorrowBooks',
+        component: MostBorrowBookComponent,
+      },
+      {
+        path: 'view-students',
+        component: ViewStudentsComponent,
+      },
+    ],
   },
   {
     path: 'forgot-password',
-    component: ForgotpasswordComponent
+    component: ForgotpasswordComponent,
   },
   {
     path: 'reset-password',
-    component: ResetpasswordComponent
+    component: ResetpasswordComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

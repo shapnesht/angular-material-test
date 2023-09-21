@@ -1,0 +1,74 @@
+<mat-card class="ml-3 h-full gray-background">
+    <h1 class="font-semibold p-3 text-xl">Most-Borow-Books</h1>
+    <mat-card-content>
+        <div class="flex w-full justify-evenly">
+        <h1 class="font-semibold p-3 text-2xl text-center"> Most-Borrow-Books</h1>
+        <div class="p-3">
+          
+          <button
+            type="button"
+            color="warn"
+            mat-raised-button
+            (click)="printDiv('printableArea')"
+          >
+            Print List
+          </button>
+        </div>
+      </div>
+      <mat-card-content id="printableArea">
+        <div class="w-full flex">
+          <div class="flex w-full justify-evenly">
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">Books Name</h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">ISBN No</h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">Writter Name</h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">Higest Borrowing</h2>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-around flex-wrap">
+          <div
+            class="w-full"
+            *ngFor="
+              let book of books.books;
+              odd as isOdd;
+              even as isEven;
+              index as i
+            "
+          >
+            <div
+              [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
+              class="flex justify-evenly py-5"
+            >
+              <div class="w-1/4">
+                <h2 class="font-bold mt-2 text-center">{{ book.name }}</h2>
+              </div>
+              <div class="w-1/4">
+                <h2 class="font-bold mt-2 text-center">
+                  {{ book.isbnno }}
+                </h2>
+              </div>
+              <div class="w-1/4">
+                <h2 class="font-bold mt-2 text-center">
+                  {{ book.writterName }}
+                </h2>
+              </div>
+              <div class="w-1/4">
+                <h2 class="font-bold mt-2 text-center">
+                  {{ book.noOftime }}
+                </h2>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card>
+  

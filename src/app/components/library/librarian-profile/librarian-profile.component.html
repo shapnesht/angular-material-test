@@ -1,0 +1,39 @@
+<mat-card class="mx-3 h-full gray-background">
+    <div class="px-5 w-full mt-2">
+      <h1 class="font-semibold p-3 text-xl">My Profile</h1>
+      
+       
+      <div class="flex flex-col">
+        <div class="container">
+          <div class="container justify-center flex items-center">
+            <img class="profile-image" [src]="user.image" alt="Profile Image" />
+          </div>
+          
+          <div class="row m-4">
+            <div class="col-md-10 offset-md-1">
+              <table class="table text-center">
+                <tr *ngIf="user.name">
+                  <td>Name</td>
+                  <td>{{ user.name }}</td>
+                </tr>
+                <tr *ngIf="user.yearOfJoining">
+                  <td>Year Of Joining</td>
+                  <td>{{ user.yearOfJoining }}</td>
+                </tr>
+                <tr *ngIf="user.email">
+                  <td>Email</td>
+                  <td>{{ user.email }}</td>
+                </tr>
+                <tr *ngIf="user.role">
+                  <td>Role</td>
+                  <td>{{ user.role }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </mat-card>
+  

@@ -58,6 +58,15 @@ import { AllotEnrollmentNumberComponent } from './components/admin/allot-enrollm
 import { LibrarySidebarComponent } from './components/library/library-sidebar/library-sidebar.component';
 import { LibraryHomepageComponent } from './components/library/library-homepage/library-homepage.component';
 import { LibraryDashboardComponent } from './components/library/library-dashboard/library-dashboard.component';
+import { ManageBooksComponent } from './components/library/manage-books/manage-books.component';
+import { LibrarianProfileComponent } from './components/library/librarian-profile/librarian-profile.component';
+import { SearchBookComponent } from './components/library/search-book/search-book.component';
+import { IssueBookComponent } from './components/library/issue-book/issue-book.component';
+import { ReturnBookComponent } from './components/library/return-book/return-book.component';
+import { AvailbleBookComponent } from './components/library/availble-book/availble-book.component';
+import { ShowNotReturnBookComponent } from './components/library/show-not-return-book/show-not-return-book.component';
+import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
+import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +104,16 @@ import { LibraryDashboardComponent } from './components/library/library-dashboar
     RecoverUserComponent,
     LibrarySidebarComponent,
     LibraryHomepageComponent,
-    LibraryDashboardComponent
+    LibraryDashboardComponent,
+    ManageBooksComponent,
+    LibrarianProfileComponent,
+    SearchBookComponent,
+    IssueBookComponent,
+    ReturnBookComponent,
+    AvailbleBookComponent,
+    ShowNotReturnBookComponent,
+    MostBorrowBookComponent,
+    ViewStudentsComponent
   ],
   imports: [
     BrowserModule,

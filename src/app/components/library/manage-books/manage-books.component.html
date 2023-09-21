@@ -1,0 +1,57 @@
+<mat-card class="mx-3 h-full gray-background">
+  <div class="flex justify-between">
+    <h1 class="text-3xl p-3 px-3">Manage Books</h1>
+  </div>
+  <div class="flex flex-col sm:flex-row justify-evenly mb-4">
+    <div class="flex">
+      <button
+        mat-raised-button
+        routerLink="/library/issue-book"
+        class="mx-auto mt-5 p-5"
+        color='primary'
+      >
+        Issue Book
+      </button>
+    </div>
+    <div class="flex">
+      <button
+        mat-raised-button
+        routerLink="/library/return-book"
+        class="mx-auto mt-5 p-5"
+        color='primary'
+      >
+        Return Book
+      </button>
+    </div>
+    <div class="flex">
+      <button
+        mat-raised-button
+        routerLink="/library/showNotReturnBook"
+        class="mx-auto mt-5 p-5"
+        color='primary'
+      >
+        Show Books Not Return
+      </button>
+    </div>
+    <div class="flex">
+      <button
+        mat-raised-button
+        routerLink="/library/availble-book"
+        class="mx-auto mt-5 p-5"
+        color='primary'
+      >
+        Availble Books
+      </button>
+    </div>
+    <div class="flex">
+      <button
+        mat-raised-button
+        routerLink="/library/mostBorrowBooks"
+        class="mx-auto mt-5 p-5"
+        color='primary'
+      >
+        Most Borrow Books
+      </button>
+    </div>
+  </div>
+</mat-card>

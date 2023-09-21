@@ -1,0 +1,116 @@
+<mat-card class="ml-3 h-full gray-background">
+  <h1 class="font-semibold p-3 text-xl">Viev Students</h1>
+  <mat-card-content>
+    <form class="w-full max-w-lg mx-auto">
+      <div>
+        <div class="flex justify-between px-3 w-full">
+          <div class="w-full md:w-1/2 mt-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name">
+                  Select Semester
+              </label>
+              <mat-form-field appearance="fill">
+                  <mat-label>Semester</mat-label>
+                  <mat-select [(ngModel)]="data.semester" name="semesters">
+                      <mat-option *ngFor="let sem of semesters" [value]="sem">
+                          {{sem}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+          <div class="w-full md:w-1/2 mt-3">
+              <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-last-name">
+                  Select Branch
+              </label>
+              <mat-form-field appearance="fill">
+                  <mat-label>Branch</mat-label>
+                  <mat-select name="branch" [(ngModel)]="data.branch" name="food">
+                      <mat-option *ngFor="let branch of branches" [value]="branch">
+                          {{branch}}
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+      </div>
+        <div class="w-1/6 mb-3 ">
+          <button mat-raised-button class="w-full text-center" color="primary">
+            Enter
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="flex w-full justify-evenly">
+      <h1 class="font-semibold p-3 text-2xl text-center">View Students</h1>
+      <div class="p-3">
+        
+        <button
+          type="button"
+          color="warn"
+          mat-raised-button
+          (click)="printDiv('printableArea')"
+        >
+          Print Students
+        </button>
+      </div>
+    </div>
+    <mat-card-content id="printableArea">
+      <div class="w-full flex">
+        <div class="flex w-full justify-evenly">
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Students Name</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Students Id</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Total Issued Book</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">View status</h2>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-around flex-wrap">
+        <div
+          class="w-full"
+          *ngFor="
+            let student of students.students;
+            odd as isOdd;
+            even as isEven;
+            index as i
+          "
+        >
+          <div
+            [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
+            class="flex justify-evenly py-5"
+          >
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">{{ student.name }}</h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">
+                {{ student.rollno }}
+              </h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">
+                {{ student.noOfCurrentissuebook }}
+              </h2>
+            </div>
+            <div class="w-1/4 text-center">
+              <button
+                type="button"
+                color="primary"
+                mat-raised-button
+                (click)="printDiv('printableArea')"
+              >
+                View
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card-content>
+</mat-card>
