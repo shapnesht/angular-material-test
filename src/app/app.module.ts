@@ -70,6 +70,7 @@ import { ShowNotReturnBookComponent } from './components/library/show-not-return
 import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
 import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
 import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component'
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -147,6 +148,10 @@ import { TeacherProfileComponent } from './components/teacher/teacher-profile/te
     MatCardModule,
     HttpClientModule,
     NgChartsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    }),
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent],
