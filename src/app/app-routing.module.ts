@@ -42,6 +42,11 @@ import { ShowNotReturnBookComponent } from './components/library/show-not-return
 import { MostBorrowBookComponent } from './components/library/most-borrow-book/most-borrow-book.component';
 import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
 import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component';
+import { ManageBorrowingBooksComponent } from './components/library/manage-borrowing-books/manage-borrowing-books.component';
+import { CreateBookComponent } from './components/library/create-book/create-book.component';
+import { UpdateBookComponent } from './components/library/update-book/update-book.component';
+import { GetAllBooksComponent } from './components/library/get-all-books/get-all-books.component';
+import { DeleteBookComponent } from './components/library/delete-book/delete-book.component';
 
 
 const routes: Routes = [
@@ -155,6 +160,10 @@ const routes: Routes = [
         component: ManageBooksComponent,
       },
       {
+        path: 'manageBorrowBooks',
+        component: ManageBorrowingBooksComponent,
+      },
+      {
         path: 'myprofile',
         component: LibrarianProfileComponent,
       },
@@ -186,6 +195,22 @@ const routes: Routes = [
         path: 'view-students',
         component: ViewStudentsComponent,
       },
+      {
+        path: 'create-book',
+        component: CreateBookComponent,
+      },
+      {
+        path: 'get-all-books',
+        component: GetAllBooksComponent,
+      },
+      {
+        path: 'update-book',
+        component: UpdateBookComponent,
+      },
+      {
+        path: 'delete-book',
+        component: DeleteBookComponent,
+      },
     ],
   },
   {
@@ -196,6 +221,7 @@ const routes: Routes = [
     path: 'reset-password',
     component: ResetpasswordComponent,
   },
+  
 ];
 
 @NgModule({

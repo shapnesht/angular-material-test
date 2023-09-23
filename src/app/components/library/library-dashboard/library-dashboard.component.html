@@ -5,35 +5,27 @@
   </div>
   <div class="flex flex-col sm:flex-row justify-evenly mb-4">
     <div class="flex">
+      <button mat-raised-button class="mx-auto mt-5 p-5 " routerLink="manageBorrowBooks">Manage Borrowing Books</button>
+    </div>
+    <div class="flex">
       <button mat-raised-button class="mx-auto mt-5 p-5 " routerLink="manageBooks">Manage Books</button>
     </div>
     <div class="flex">
-      <button
-        mat-raised-button
-        routerLink="/library/searchbook"
-        class="mx-auto mt-5 p-5"
-      >
+      <button mat-raised-button routerLink="/library/searchbook" class="mx-auto mt-5 p-5">
         Find Book by ISBN
       </button>
     </div>
     <div class="flex">
-      <button mat-raised-button class="mx-auto mt-5 p-5" routerLink="view-students" >View Students</button>
+      <button mat-raised-button class="mx-auto mt-5 p-5" routerLink="view-students">View Students</button>
     </div>
   </div>
-  <div
-    class="w-full h-auto flex justify-center align-middle px-3 text-gray-100"
-  >
+  <div class="w-full h-auto flex justify-center align-middle px-3 text-gray-100">
     <div class="w-11/12 sm:w-6/12 mt-3 bg-gray-800 rounded-2xl">
       <h1 class="text-2xl p-3 font-bold">Books Availbility</h1>
       <div class="w-full flex justify-center">
         <div class="w-3/5 mb-4">
-          <canvas
-            baseChart
-            [type]="'pie'"
-            [datasets]="pieChartTeacherDatasets"
-            [labels]="pieChartLabels"
-            [legend]="true"
-          >
+          <canvas baseChart [type]="'pie'" [datasets]="pieChartTeacherDatasets" [labels]="pieChartLabels"
+            [legend]="true">
           </canvas>
         </div>
       </div>

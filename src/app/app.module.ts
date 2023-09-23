@@ -71,6 +71,11 @@ import { MostBorrowBookComponent } from './components/library/most-borrow-book/m
 import { ViewStudentsComponent } from './components/library/view-students/view-students.component';
 import { TeacherProfileComponent } from './components/teacher/teacher-profile/teacher-profile.component'
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { CreateBookComponent } from './components/library/create-book/create-book.component';
+import { GetAllBooksComponent } from './components/library/get-all-books/get-all-books.component';
+import { UpdateBookComponent } from './components/library/update-book/update-book.component';
+import { DeleteBookComponent } from './components/library/delete-book/delete-book.component';
+import { ManageBorrowingBooksComponent } from './components/library/manage-borrowing-books/manage-borrowing-books.component';
 
 @NgModule({
   declarations: [
@@ -120,7 +125,12 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     AvailbleBookComponent,
     ShowNotReturnBookComponent,
     MostBorrowBookComponent,
-    ViewStudentsComponent
+    ViewStudentsComponent,
+    CreateBookComponent,
+    GetAllBooksComponent,
+    UpdateBookComponent,
+    DeleteBookComponent,
+    ManageBorrowingBooksComponent
   ],
   imports: [
     BrowserModule,
