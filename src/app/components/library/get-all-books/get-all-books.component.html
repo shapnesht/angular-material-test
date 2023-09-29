@@ -1,78 +1,67 @@
 <mat-card class="ml-3 h-full gray-background">
-    <h1 class="font-semibold p-3 text-xl">Get All Books</h1>
-    <mat-card-content>
-        <div class="flex w-full justify-evenly">
-        <h1 class="font-semibold p-3 text-2xl text-center"> All Books</h1>
-        <div class="p-3">
-          
-          <button
-            type="button"
-            color="warn"
-            mat-raised-button
-            (click)="printDiv('printableArea')"
-          >
-            Print List
-          </button>
-        </div>
+  <h1 class="font-semibold p-3 text-xl">All Books</h1>
+  <mat-card-content>
+    <div class="flex w-full justify-around">
+      <div class="flex gap-2 items-baseline w-1/2">
+        <input
+          class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          name="search" [(ngModel)]="searchTerm" type="text" placeholder="Search">
+        <button type="button" color="primary" mat-raised-button (click)="filterBooks()">
+          Search
+        </button>
       </div>
-      <mat-card-content id="printableArea">
-        <div class="w-full flex">
-          <div class="flex w-full justify-evenly">
-            <div class="w-1/4">
-              <h2 class="font-bold mt-2 text-center">Books Name</h2>
-            </div>
-            <div class="w-1/4">
-              <h2 class="font-bold mt-2 text-center">ISBN No</h2>
-            </div>
-            <div class="w-1/4">
-              <h2 class="font-bold mt-2 text-center">Writter Name</h2>
-            </div>
-            <div class="w-1/4">
-              <h2 class="font-bold mt-2 text-center">View Details</h2>
-            </div>
+      <div class="p-3">
+        <button type="button" color="warn" mat-raised-button (click)="printDiv('printableArea')">
+          Print List
+        </button>
+      </div>
+    </div>
+    <mat-card-content id="printableArea">
+      <div class="w-full flex">
+        <div class="flex w-full justify-evenly">
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Book Name</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">ISBN No</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Author Name</h2>
+          </div>
+          <div class="w-1/4">
+            <h2 class="font-bold mt-2 text-center">Quantity</h2>
           </div>
         </div>
-        <div class="flex justify-around flex-wrap">
-          <div
-            class="w-full"
-            *ngFor="
-              let book of books.books;
+      </div>
+      <div class="flex justify-around flex-wrap">
+        <div class="w-full" *ngFor="
+              let book of filteredBooks.books;
               odd as isOdd;
               even as isEven;
               index as i
-            "
-          >
-            <div
-              [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }"
-              class="flex justify-evenly py-5"
-            >
-              <div class="w-1/4">
-                <h2 class="font-bold mt-2 text-center">{{ book.name }}</h2>
-              </div>
-              <div class="w-1/4">
-                <h2 class="font-bold mt-2 text-center">
-                  {{ book.isbnno }}
-                </h2>
-              </div>
-              <div class="w-1/4">
-                <h2 class="font-bold mt-2 text-center">
-                  {{ book.writterName }}
-                </h2>
-              </div>
-              <div class="w-1/4 text-center">
-                <button
-                  type="button"
-                  color="primary"
-                  mat-raised-button
-                  (click)="printDiv('printableArea')"
-                >
-                  View
-                </button>
-              </div>
+            ">
+          <div [ngClass]="{ 'bg-gray-300': isOdd, 'bg-zinc-400': isEven }" class="flex justify-evenly py-5">
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">{{ book.title }}</h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">
+                {{ book.isbn }}
+              </h2>
+            </div>
+            <div class="w-1/4">
+              <h2 class="font-bold mt-2 text-center">
+                {{ book.author }}
+              </h2>
+            </div>
+            <div class="w-1/4 text-center">
+              <h2 class="font-bold mt-2 text-center">
+                {{ book.quantity }}
+              </h2>
             </div>
           </div>
         </div>
-      </mat-card-content>
+      </div>
     </mat-card-content>
-  </mat-card>
-  
+  </mat-card-content>
+</mat-card>

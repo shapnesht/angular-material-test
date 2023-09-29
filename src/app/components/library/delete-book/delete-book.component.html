@@ -9,19 +9,16 @@
                 class="appearance-none block w-full border border-black rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 name="isbn"
                 type="text"
+                [(ngModel)]="data.book.isbn"
                 placeholder="Enter ISBN No"
               />
-              <button mat-raised-button class="w-1/2 ml-2 mb-3">
-                Fetch Books
+              <button mat-raised-button class="w-1/2 ml-2 mb-3" color="warn" (click)="deleteBook()">
+                Delete Book
               </button>
             </div>
           </div>
         </div>
-        <div class="w-full mb-3">
-          <button mat-raised-button class="w-full" color="warn">
-            Delete Book
-          </button>
-        </div>
+        
       </form>
     </mat-card-content>
   </mat-card>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LibraryService } from 'src/app/services/library.service';
 
 @Component({
   selector: 'app-get-all-books',
   templateUrl: './get-all-books.component.html',
-  styleUrls: ['./get-all-books.component.scss']
+  styleUrls: ['./get-all-books.component.scss'],
 })
 export class GetAllBooksComponent {
   printDiv(divName: string) {
@@ -20,141 +22,151 @@ export class GetAllBooksComponent {
     books: [
       {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'Toc',
-        isbnno: '60869860565',
-        writterName: 'Sanjay',
-        issuedDate:'17032023',
-      },
-      {
-        _id: '63e1eb623a1c19bbb3000081',
-        name: 'CN',
-        isbnno: '060606901053',
-        writterName: 'Agam',
-        issuedDate: '17032023',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
       },
       {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'AI',
-        isbnno: '59685680959556',
-        writterName: 'Ashi',
-        issuedDate: '1702023',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
       },
       {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Aditi',
-        issuedDate: '17032023',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
       },
       {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Aditi',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Amidh',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Piyush',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Pradeep',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Ravindra',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Sanjana',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Praful',
-        issuedDate: '17032023',
-      },{
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
         _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Praati',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Amit',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Anikate',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Sanket',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Sameer',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Aditi',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Hiran',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Harivanshray',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Abdul Kalam',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Raheem',
-        issuedDate: '17032023',
-      },{
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Aditi',
-        issuedDate: '17032023',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
       },
     ],
   };
+  filteredBooks = {
+    books: [
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+      {
+        _id: '63e1eb773a1c19bbb3000084',
+        title: 'Dummy',
+        isbn: '0',
+        author: 'Author',
+        quantity: 0,
+      },
+    ],
+  };
+
+  filterBooks = () => {
+    this.filteredBooks.books = this.books.books.filter((book) => {
+      return (
+        book.author.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        book.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        book.isbn.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    });
+  };
+
+  searchTerm = '';
+
+  public constructor(
+    private libraryService: LibraryService,
+    private snack: MatSnackBar
+  ) {}
+
+  ngOnInit() {
+    this.libraryService.getAllBooks().subscribe({
+      next: (data: any) => {
+        this.books.books = data.books;
+        this.filteredBooks.books = data.books;
+      },
+      error: (error) =>
+        this.snack.open(
+          error.error.msg || 'Server Error Please try later',
+          'OK'
+        ),
+    });
+  }
 }

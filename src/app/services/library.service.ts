@@ -30,4 +30,7 @@ export class LibraryService {
   public deleteBook(id:any) {
     return this.http.delete(`${baseurl}/library/${id}`, this.config)
   }
+  public fetchByIsbn(id: any) {
+    return this.http.get(`${baseurl}/library/isbn/${id}`, this.config);
+  }
 }
