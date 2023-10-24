@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BorrowBookService } from 'src/app/services/borrow-book.service';
 
 @Component({
   selector: 'app-show-not-return-book',
   templateUrl: './show-not-return-book.component.html',
-  styleUrls: ['./show-not-return-book.component.scss']
+  styleUrls: ['./show-not-return-book.component.scss'],
 })
 export class ShowNotReturnBookComponent {
-
   printDiv(divName: string) {
     var printContents: any = document.getElementById(divName)?.innerHTML;
     var originalContents = document.body.innerHTML;
@@ -17,36 +18,51 @@ export class ShowNotReturnBookComponent {
 
     window.location.reload();
   }
-  books = {
+  books: any = {
     books: [
       {
-        _id: '63e1eb773a1c19bbb3000084',
         name: 'Toc',
         isbnno: '60869860565',
-        issuedTo: 'Sanjay',
-        issuedDate:'17032023',
+        issuedTo: 'Shop',
+        issuedDate: '15052023',
       },
       {
-        _id: '63e1eb623a1c19bbb3000081',
-        name: 'CN',
-        isbnno: '060606901053',
-        issuedTo: 'Agam',
-        issuedDate: '17032023',
+        name: 'Toc',
+        isbnno: '60869860565',
+        issuedTo: 'Shop',
+        issuedDate: '15052023',
       },
       {
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'AI',
-        isbnno: '59685680959556',
-        issuedTo: 'Ashi',
-        issuedDate: '1702023',
+        name: 'Toc',
+        isbnno: '60869860565',
+        issuedTo: 'Shop',
+        issuedDate: '15052023',
       },
       {
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        issuedTo: 'Aditi',
-        issuedDate: '17032023',
+        name: 'Toc',
+        isbnno: '60869860565',
+        issuedTo: 'Shop',
+        issuedDate: '15052023',
       },
     ],
   };
+
+  public constructor(
+    private borrowService: BorrowBookService,
+    private snack: MatSnackBar
+  ) {}
+
+  ngOnInit() {
+    this.borrowService.showNotReturnBooks().subscribe({
+      next: (data: any) => {
+        this.books = data;
+      },
+      error: (error) =>
+        this.snack.open(
+          error.error.msg || 'Server Error Please try later',
+          'OK',
+          { duration: 3000 }
+        ),
+    });
+  }
 }

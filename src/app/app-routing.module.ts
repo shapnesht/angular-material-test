@@ -47,6 +47,8 @@ import { CreateBookComponent } from './components/library/create-book/create-boo
 import { UpdateBookComponent } from './components/library/update-book/update-book.component';
 import { GetAllBooksComponent } from './components/library/get-all-books/get-all-books.component';
 import { DeleteBookComponent } from './components/library/delete-book/delete-book.component';
+import { SendShortAttendenceAlertComponent } from './components/admin/send-short-attendence-alert/send-short-attendence-alert.component';
+import { SendDueDateAlertComponent } from './components/library/send-due-date-alert/send-due-date-alert.component';
 
 
 const routes: Routes = [
@@ -98,6 +100,10 @@ const routes: Routes = [
       {
         path: 'recoverUser',
         component: RecoverUserComponent,
+      },
+      {
+        path: 'sendAttendenceAlert',
+        component: SendShortAttendenceAlertComponent,
       },
     ],
   },
@@ -210,6 +216,10 @@ const routes: Routes = [
       {
         path: 'delete-book',
         component: DeleteBookComponent,
+      },
+      {
+        path: 'sendDueDateAlert',
+        component: SendDueDateAlertComponent,
       },
     ],
   },

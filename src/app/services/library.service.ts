@@ -24,6 +24,9 @@ export class LibraryService {
   public getBook(id:any) {
     return this.http.get(`${baseurl}/library/${id}`, this.config)
   }
+  public getAllAvailbleBook() {
+    return this.http.get(`${baseurl}/library/getAllAvailableBooks`, this.config)
+  }
   public updateBook(id:any, data:any) {
     return this.http.patch(`${baseurl}/library/${id}`, data, this.config)
   }

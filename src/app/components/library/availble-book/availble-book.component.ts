@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { LibraryService } from 'src/app/services/library.service';
 
 @Component({
   selector: 'app-availble-book',
@@ -16,36 +18,26 @@ export class AvailbleBookComponent {
 
     window.location.reload();
   }
-  books = {
-    books: [
-      {
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'Toc',
-        isbnno: '60869860565',
-        writterName: 'Sanjay',
-        issuedDate:'17032023',
+  books: any = {};
+  public constructor(
+    private libraryService: LibraryService,
+    private snack: MatSnackBar
+  ) {}
+  fetchAvailbleBooks(){
+    this.libraryService.getAllAvailbleBook().subscribe({
+      next: (data: any) => {
+        this.books = data;
       },
-      {
-        _id: '63e1eb623a1c19bbb3000081',
-        name: 'CN',
-        isbnno: '060606901053',
-        writterName: 'Agam',
-        issuedDate: '17032023',
-      },
-      {
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'AI',
-        isbnno: '59685680959556',
-        writterName: 'Ashi',
-        issuedDate: '1702023',
-      },
-      {
-        _id: '63e1eb773a1c19bbb3000084',
-        name: 'OS',
-        isbnno: '59680596985776',
-        writterName: 'Aditi',
-        issuedDate: '17032023',
-      },
-    ],
-  };
+      error: (error) =>
+        this.snack.open(
+          error.error.msg || 'Server Error Please try later',
+          'OK',
+          { duration: 3000 }
+        ),
+    });
+   
+  }
+  ngOnInit() {
+    this.fetchAvailbleBooks();
+  }
 }

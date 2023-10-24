@@ -21,7 +21,10 @@ export class BorrowBookService {
     return this.http.post(`${baseurl}/borrow/getStudentBookHistory`, data, this.config)
   }
   public returnBook(id:any, data:any) {
-    return this.http.patch(`${baseurl}/borrow/${id}`,data, this.config)
+    return this.http.patch(`${baseurl}/borrow/returnBorrowBook/${id}`,data, this.config)
+  }
+  public showNotReturnBooks() {
+    return this.http.get(`${baseurl}/borrow/getUnreturnedBook`, this.config)
   }
 
 }

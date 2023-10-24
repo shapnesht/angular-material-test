@@ -76,6 +76,8 @@ import { GetAllBooksComponent } from './components/library/get-all-books/get-all
 import { UpdateBookComponent } from './components/library/update-book/update-book.component';
 import { DeleteBookComponent } from './components/library/delete-book/delete-book.component';
 import { ManageBorrowingBooksComponent } from './components/library/manage-borrowing-books/manage-borrowing-books.component';
+import { SendDueDateAlertComponent } from './components/library/send-due-date-alert/send-due-date-alert.component';
+import { SendShortAttendenceAlertComponent } from './components/admin/send-short-attendence-alert/send-short-attendence-alert.component';
 
 @NgModule({
   declarations: [
@@ -130,7 +132,9 @@ import { ManageBorrowingBooksComponent } from './components/library/manage-borro
     GetAllBooksComponent,
     UpdateBookComponent,
     DeleteBookComponent,
-    ManageBorrowingBooksComponent
+    ManageBorrowingBooksComponent,
+    SendDueDateAlertComponent,
+    SendShortAttendenceAlertComponent
   ],
   imports: [
     BrowserModule,
